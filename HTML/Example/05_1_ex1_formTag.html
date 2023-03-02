@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<!-- <form>태그 : 정보를 제출하기 위하여 범위를 지정하는 역할을 합니다. -->
+	<form action="">
+		<!-- 
+		<fieldset>태그 : 여러 컨트롤과 라벨을 묶을 때 사용합니다.
+		<legend>태그 : 부모(<fieldset>태그)의 콘텐츠를 설명합니다.
+		 -->
+		<fieldset>
+			<legend>고객 정보</legend>
+
+			<!-- 
+			<label>태그 : 입력받는 필드를 설명할 때 사용합니다.
+			<label>태그 하위에 <input>태그를 위치시킬 수 있고,
+			id와 for 속성을 사용하여 <input>태그와 연결지을 수 있습니다.
+
+			<input>태그 : 데이터를 입력 받을 수 있습니다.
+				** type 속성을 통하여 다양한 방법으로 데이터를 받을 수 있습니다. **
+					-text : 일반적인 텍스트를 입력할 수 있는 텍스트 박스를 넣습니다.
+					-password : 비밀번호를 입력할 수 있는 필드를 넣습니다.
+					-search : 검색할 때 입력하는 필드를 넣습니다.
+					-url : URL주소를 입력할 수 있는 필드를 넣습니다.(형식 체크를 해줍니다.)
+					-email : 이메일을 입력할 수 있는 필드를 넣습니다.(형식 체크를 해줍니다.)
+					-tel : 전화번호를 입력할 수 있는 필드를 넣습니다.(모바일 페이지에서 이 값을 이용해 바로 전화를 걸 수 있습니다.)
+					-checkbox : 여러개의 체크박스 항목 중 복수를 선택할 수 있습니다. (체크박스 선택시 선택된 체크박스의 value 값이 서버로 전송됩니다.)
+					-radio : 여러개의 라디오 항목 중 1개를 선택할 수 있습니다. (선택된 라디오 항목의 value 값이 서버로 전송됩니다.)
+					-number : 숫자를 입력하기 위한 필드입니다.
+					-range : 슬라이드 막대를 움직여서 값을 입력받을 수 있습니다.
+					-date : 날짜와 시간 데이터를 입력 받을 수 있습니다. (달력)
+
+			-->
+			<label for="id">ID</label>
+			<input type="text" name="id" id="id" maxlength="10">
+			<br>
+			<label for="pw">PW</label>
+			<input type="password" name="pw" id="pw" maxlength="15">
+
+			<br>
+			<label for="serch">serch</label>
+			<input type="search" name="serch" id="serch">
+
+			<br>
+			<label for="url">url</label>
+			<input type="url" name="url" id="url">
+
+			<br>
+			<label for="email">email</label>
+			<input type="email" name="email" id="email">
+
+			<br>
+			<label for="tel">tel</label>
+			<input type="tel" name="tel" id="tel">
+			<br>
+			<br>
+			<ul>
+				<li>
+					<label for="sb">딸기</label>
+					<input value="sb" type="checkbox" name="sb" id="sb">
+				</li>
+				<li>
+					<label for="banana">바나나</label>
+					<input value="ba" type="checkbox" name="banana" id="banana">
+				</li>
+				<li>
+					<label for="wm">수박</label>
+					<input value="wm" type="checkbox" name="wm" id="wm">
+				</li>
+			</ul>
+
+			<br>
+			<br>
+			<ul>
+				<li>
+					<label for="r_sb">딸기</label>
+					<input value="1" type="radio" name="fruit" id="r_sb">
+				</li>
+				<li>
+					<label for="r_banana">바나나</label>
+					<input value="2" type="radio" name="fruit" id="r_banana">
+				</li>
+				<li>
+					<label for="r_wm">수박</label>
+					<input value="3" type="radio" name="fruit" id="r_wm">
+				</li>
+			</ul>
+			<br>
+			<br>
+			<label for="number">Number</label>
+			<input type="number" value="3" min="1" max="5">
+			<br>
+			<br>
+			<label for="range">range</label>
+			<input type="range" value="3" min="1" max="5">
+
+			<br>
+			<br>
+			<label for="date">date</label>
+			<input type="date" min="2023-03-01" max="2023-03-10">
+
+			<br>
+			<br>
+			<button>버튼</button>
+		</fieldset>
+		<fieldset>
+			<legend>배송 정보</legend>
+		</fieldset>
+	</form>
+</body>
+
+</html>
