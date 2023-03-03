@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		/* &&기본 선택자&& */
+
+		/* 전체 선택자 : 모든 요소를 선택합니다. */
+		* {
+			margin: 0; /* 외부 여백 없음 */
+		}
+
+		/* 타입 선택자 : 특정 태그 이름을 가진 모든 요소를 선택합니다. */
+		h1 {
+			color: blue; /* 글자색 */
+		}
+
+		/* 클래스 선택자 : 주어진 class명을 가진 모든 요소를 선택합니다. */
+		.bk_gray {
+			background-color: gray; /* 배경색 */
+		}
+
+		/* ID 선택자 */
+		#container {
+			width: 500px; /* 너비 */
+			margin: 10px auto; /* 외부 여백, 가로 중앙에 배치 */
+			padding: 10px; /* 내부 여백 */
+			border: 1px solid black; /* 테두리 굵기 색깔 */
+		}
+
+		/* 그룹 선택자& */
+		em, span {
+			color: red;
+			font-size: 20px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div id="container">
+		<h1>레드향</h1>
+		<p><em>껍질에</em> 붉은 빛이 돌아 <strong class="bk_gray">레드향</strong>이라 불린다.</p>
+		<p>레드향은 <span>한라봉과 귤을</span> 교배한 것이다.</p>
+	</div>
+
+</body>
+</html>
