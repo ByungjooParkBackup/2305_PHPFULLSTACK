@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 
+		폼에서 사용하는 여러 가지 태그
+		
+		<textarea>태그 : 여러 줄을 입력하는 텍스트 영역을 만드는 태그입니다.
+			** 속성 **
+			-cols : 가로 너비를 문자 단위로 지정합니다.
+			-rows : 세로 길이를 줄 단위로 지정합니다.
+		
+		<select>, <option>태그 : 드롭다운 목록을 만들어 줍니다.
+			** <option>태그의 속성 **
+			-value : 해당 항목을 선택 할 때 서버로 넘겨줄 값을 지정합니다.
+			-selected : 페이지 로드 시 기본적으로 선택해서 보여 줄 항목을 지정합니다.
+
+		<datalist>, <option>태그 : 데이터 목록을 만들어주는 태그입니다.
+			** <option>태그의 속성 **
+			-value : 해당 항목을 선택 할 때 서버로 넘겨줄 값을 지정하고, 이 값이 텍스트 필드에도 나타납니다. (브라우저마다 다를 수 있습니다.)
+		
+		<button>태그 : 버튼을 만들어주는 태그입니다. (<input type="속성 값">과 같은 기능을 하지만, 하위 태그를 포함 할 수 있습니다.)
+			** <button>태그의 속성 **
+			-submit : 폼을 서버로 전송합니다.
+			-reset : 폼에 입력한 내용을 초기화합니다.
+			-button : 버튼 형태만 만들 뿐 기능은 없습니다.
+	 -->
+	<form action="">
+		<label for="textbox">메모</label>
+		<textarea name="memo" id="textbox" cols="30" rows="10"></textarea>
+		<br>
+		<br><br>
+		<select name="select" id="select">
+			<option value="0">탕수육</option>
+			<option value="1">커피</option>
+			<option value="2" selected>밥</option>
+		</select>
+		<br>
+		<br><br>
+
+		<label for="cook">요리</label>
+		<input type="text" id="cook" list="datalist">
+		<datalist name="datalist" id="datalist">
+			<option value="0">밥</option>
+			<option value="1">돈까스</option>
+			<option value="2">물</option>
+		</datalist>
+
+		<br>
+		<br>
+		<br>
+		<button type="submit">Submit</button>
+		<button type="reset">Reset</button>
+		<button type="button">Button</button>
+	</form>
+
+
+</body>
+</html>

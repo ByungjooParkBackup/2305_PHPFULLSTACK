@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 
+		<input> 태그의 주요 속성
+			-autofocus : 페이지를 불러오자마자 폼에서 원하는 요소에 마우스 포인터를 표시할 수 있습니다.
+			-placeholder : 입력란에 힌트 내용을 표시하고, 해당 필드를 선택하면 내용이 사라집니다.
+			-readonly : 읽기 전용 필드로 만들어 줍니다.
+			-required : 필수 입력 필드로 지정합니다.
+			-checked : 페이지를 불러오자마자 해당 항목을 기본으로 선택해 줍니다. (checkbox, radio)
+	 -->
+	<form action="">
+		<fieldset>
+			<legend>고객 정보</legend>
+
+			<label for="id">아이디</label>
+			<input type="text" required autofocus placeholder="10자까지 입력해주세요.">
+
+			<br>
+			<label for="pw">패스워드</label>
+			<input type="password">
+
+			<br>
+			<label for="readonly">참조사항</label>
+			<input type="text" readonly value="참조">
+
+			<br>
+			<br>
+			<ul>
+				<li>
+					<label for="sb">딸기</label>
+					<input value="sb" type="checkbox" name="sb" id="sb">
+				</li>
+				<li>
+					<label for="banana">바나나</label>
+					<input checked value="ba" type="checkbox" name="banana" id="banana">
+				</li>
+				<li>
+					<label for="wm">수박</label>
+					<input value="wm" type="checkbox" name="wm" id="wm">
+				</li>
+			</ul>
+			<br>
+			<br>
+			
+			<ul>
+				<li>하하하하</li>
+				<li>
+					<label for="r_sb">딸기</label>
+					<input value="1" type="radio" name="fruit" id="r_sb">
+				</li>
+				<li>
+					<label for="r_banana">바나나</label>
+					<input value="2" type="radio" name="fruit" id="r_banana">
+				</li>
+				<li>
+					<label for="r_wm">수박</label>
+					<input checked value="3" type="radio" name="fruit" id="r_wm">
+				</li>
+			</ul>
+			<br>
+			<br>
+			<input type="submit">
+		</fieldset>
+	</form>
+</body>
+</html>

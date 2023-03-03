@@ -36,7 +36,10 @@
 					-number : 숫자를 입력하기 위한 필드입니다.
 					-range : 슬라이드 막대를 움직여서 값을 입력받을 수 있습니다.
 					-date : 날짜와 시간 데이터를 입력 받을 수 있습니다. (달력)
-
+					-submit : 폼에서 입력한 정보를 서버로 전송합니다.
+					-reset : <input>요소에 입력된 모든 정보를 리셋합니다.
+					-button : 기능은 없고 오직 버튼 형태만 삽입합니다.
+					-hidden : 화면의 폼에는 보이지 않지만 사용자가 입력을 마치면 함께 서버로 전송됩니다.
 			-->
 			<label for="id">ID</label>
 			<input type="text" name="id" id="id" maxlength="10">
@@ -108,12 +111,25 @@
 
 			<br>
 			<br>
-			<button>버튼</button>
+			<label for="submit"></label>
+			<input type="submit" value="submit">
+
+			<label for="reset"></label>
+			<input type="reset">
+
+			<label for="button"></label>
+			<input type="button" value="button">
+		
+			<input type="hidden" value="hidden_1">
+
 		</fieldset>
 		<fieldset>
 			<legend>배송 정보</legend>
 		</fieldset>
 	</form>
+	
+	<label for="id1">ID</label>
+	<input type="text" name="id1" id="id1" maxlength="10">
 </body>
 
 </html>
