@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 표 관련 속성 */
+        table {
+            /* 외곽선을 설정합니다. */
+            /* 자세한 속성명 및 속성값은 아래 사이트에서 참조 가능합니다. */
+            /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Table */
+            border: 1px solid #000000; /* 속성값은 순서대로 "외곽선 두께, 선종류, 색상"입니다. */
+            border-collapse: collapse; /* 중복된 외곽선을 하나로 합칩니다. */
+            caption-side: bottom; /* 캡션의 위치를 설정합니다. */
+            border-spacing: 10px 5px; /* 외곽선끼리의 여백을 지정합니다. */
+        }
+        th, td {
+            border: 1px dotted #000000;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>먹을 거리</caption>
+        <tr>
+            <th>요리</th>
+            <th>과일</th>
+            <th>채소</th>
+        </tr>
+        <tr>
+            <td>김치찌개</td>
+            <td>딸기</td>
+            <td>토마토</td>
+        </tr>
+        <tr>
+            <td>오므라이스</td>
+            <td>바나나</td>
+            <td>대파</td>
+        </tr>
+    </table>
+</body>
+</html>

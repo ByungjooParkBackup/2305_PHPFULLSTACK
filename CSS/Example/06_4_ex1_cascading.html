@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/06_4_ex1.css">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: red; 
+        }
+
+        h1 {
+            color: orange; 
+        } 
+        
+        h1 {
+            color: red !important; 
+        }
+
+        .h1-1 {
+            color: orange;
+        }
+        #h1-id {
+            color: black;
+        }
+        .container_2 {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        스타일 우선순위
+            1. !important
+            2. 인라인 스타일
+            3. 아이디 스타일
+            4. 클래스 스타일
+            5. 타입 스타일
+    -->
+    <div class="container">
+        <h1 class="h1-1" id="h1-id" style="color: pink;">적용 순위</h1>
+        <h1 class="h1-1" id="h1-id">적용 순위</h1>
+    </div>
+
+    <!-- 
+        스타일 상속 : 부모 요소의 스타일을 자식 요소가 상속하여 사용합니다.
+    -->
+    <div class="container_2">
+        <h1 class="h1_2">스타일 상속</h1>
+    </div>
+
+</body>
+</html>
