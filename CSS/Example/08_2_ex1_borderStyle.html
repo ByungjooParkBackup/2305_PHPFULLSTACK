@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		/* 
+			속성명
+				-border-style : 테두리의 속성을 지정합니다. (참조 : https://developer.mozilla.org/en-US/docs/Web/CSS/border-style)
+				-border-width : 테두리의 두께를 지정합니다. (참조 : https://developer.mozilla.org/en-US/docs/Web/CSS/border-width)
+				-border-color : 테두리의 색상을 지정합니다. (참조 : https://developer.mozilla.org/en-US/docs/Web/CSS/border-color)
+					> 1개 지정 : 4방향 테두리 지정
+					> 2개 지정 : 첫번째 값은 위아래, 두번째 값은 좌우를 지정
+					> 3개 지정 : 위 -> 좌우 -> 아래 순으로 지정
+					> 4개 지정 : 위 -> 우 -> 아래 -> 좌 순으로 지정
+				-border : 테두리의 속성, 두께, 생상을 지정합니다. (참조 : https://developer.mozilla.org/en-US/docs/Web/CSS/border)
+				-border-radius : 테두리의 꼭짓점을 둥글게 만듭니다. (참조 : https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)
+					> 각 꼭지점을 다르게 지정하고 싶다면 아래의 속성명으로 지정이 가능합니다.
+						border-top-left-radius
+						border-top-right-radius
+						border-bottom-left-radius
+						border-bottom-right-radius
+		*/
+		.div_style_none {
+			width: 200px;
+			height: 20px;
+			border-style: none;
+		}
+		.div_style_solid {
+			width: 200px;
+			height: 20px;
+			border-style: solid;
+			border-width : 5px;
+			border-color : #ff0000;
+		}
+		.div_style_dotted {
+			width: 200px;
+			height: 20px;
+			border-style: dotted;
+			border-width : 5px 10px;
+		}
+		.div_style_dashed {
+			width: 200px;
+			height: 20px;
+			border-style: dashed;
+			border-width : 5px 10px 15px;
+		}
+		.div_style_double {
+			width: 200px;
+			height: 20px;
+			border-style: double;
+			border-width : 5px 10px 15px 20px;
+		}
+		.div_style_all {
+			width: 200px;
+			height: 20px;
+			border-style: dashed inset outset ridge;
+		}
+		.div_border {
+			width: 200px;
+			height: 20px;
+			border: 5px solid #808080;
+		}
+		.div_radius {
+			width: 200px;
+			height: 20px;
+			border: 5px solid #808080;
+			border-radius: 25px; /* px, em, rem, %등으로 속성 값을 줄 수 있습니다. */
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<h2>border-style 속성</h2>
+		<div class="div_style_none">테두리 속성(없음)</div>
+		<br>
+		<div class="div_style_solid">테두리 속성(실선)</div>
+		<br>
+		<div class="div_style_dotted">테두리 속성(점선)</div>
+		<br>
+		<div class="div_style_dashed">테두리 속성(대쉬)</div>
+		<br>
+		<div class="div_style_double">테두리 속성(이중선)</div>
+		<br>
+		<div class="div_style_all">테두리 속성(4방향)</div>
+	</section>
+	<hr>
+	<section>
+		<h2>border 속성</h2>
+		<div class="div_border">테두리 속성(한번에)</div>
+	</section>
+	<hr>
+	<section>
+		<h2>border-radius 속성</h2>
+		<div class="div_radius">테두리 속성(꼭지점)</div>
+	</section>
+</body>
+</html>
