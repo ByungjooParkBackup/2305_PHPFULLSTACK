@@ -11,10 +11,11 @@
 		}      
 		.container{
 			margin: 0 auto;
-			width: 600px;
+			width: 500px;
 			height: 700px;
 			border: 1px dotted gray;
 			padding: 20px;
+			/* background 관련 속성값을 아래처럼 한줄에 적을 수도 있습니다.*/
 			background: #ffffff url('../Example/img/cat.jpg') no-repeat right bottom / 70%;
 		}
 		h1 {
@@ -32,12 +33,16 @@
 			color: #ff0000;
 		}
 		p {
-			text-indent: 3em;
+			text-indent: 3em; /* 들여쓰기 적용 */
 			margin: 6px;
 		}
 	</style>
 </head>
 <body>
+	<!-- 
+		p태그로 작성한 부분은 ul태그로 대체가 가능합니다.
+		그경우 p태그에 준  CSS효과는 필요가 없습니다.
+	-->
 	<div class="container">
 		<h1>대학언론사 수습기자 모집</h1>
 		<h2>신입생 여러분을 기다립니다</h2>
