@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+		<배경색과 범위 지정>
+			background-color : HTML 요소의 배경 색을 지정합니다.
+			background-clip : HTML 요소의 배경 색 적용 범위를 지정합니다.
+				** 속성 값 **
+				-border-box : 테두리까지 적용합니다. (기본값)
+				-padding-box : 패딩범위까지 적용합니다.
+				-content-box : 콘텐츠 부분에만 적용합니다.
+	    */
+        h1 {
+            background-color: red;
+            border: 10px dashed black;
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            background-clip: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>백그라운드 컬러</h1>
+</body>
+</html>

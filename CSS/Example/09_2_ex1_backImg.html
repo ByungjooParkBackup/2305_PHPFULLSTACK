@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>배경이미지 지정하기</title>
+	<style>
+		.div_img {
+			border: 1px solid #000;
+			width: 150px;
+			height: 300px;
+			display: inline-block;
+			overflow: scroll; /* content가 넘침 때 스크롤 생성 */
+			/*
+				background-image : 
+					HTML요소에 배경 이미지를 지정합니다.
+					복수의 이미지를 지정하여, 해당 이미지가 없을 때 차순위 이미지를 지정합니다.
+			*/
+			background-image: url('./img/ct.jpg'),
+							url('./img/uncle-sam.jpg');
+			
+			/* 
+				background-repeat : 배경 이미지의 반복 방법을 지정합니다.
+					** 속성 값 **
+					-repeat : 가로, 세로 반복
+					-no-repeat : 반복하지 않음
+					-repeat-x : 가로 반복
+					-repeat-y : 세로 반복
+			*/
+			background-repeat: repeat;
+
+			/* 
+				background-position : 배경 이미지의 초기 위치를 설정합니다.
+					** 속성 값 **
+					-키워드 : top, left, right, bottom
+					-퍼센티지 : 25% 75%
+					-Edge offsets : bottom 30px right 50px
+			*/
+			background-position: top;
+
+			/* 
+				background-size : 배경 이미지의 크기를 설정합니다.
+					** 속성 값 **
+					-auto :  원본 크기를 유지(기본값)
+					-contain : 요소 안에 배경 이미지가 다 들어오도록 확대 및 축소
+					-cover : 요소를 모두 덮도록 이미지를 확대 및 축소 합니다.
+					-px, em, rem : 하나의 값을 주어 너비를 지정하고, 너비에 맞는 높이도 자동 계산합니다.
+					-% : 이미지의 비율에 맞도록 조절합니다.
+			*/
+			background-size: cover;
+		}
+
+		/* 
+			background-attachment : 뷰포트 내에서 배경 이미지의 고정여부를 지정하는 속성입니다.
+				** 속성 값 **
+				-scroll : 내용을 스크롤하면 배경 이미지는 스크롤되지 않습니다. 
+				-fixed : 뷰포트의 스크롤과 배경 이미지가 같이 스크롤 됩니다.
+				-local : 내용을 스크롤하면 배경 이미지도 스크롤됩니다.
+		*/
+		.scroll {
+			background-attachment: scroll;
+		}
+		.fixed {
+			background-attachment: fixed;
+		}
+		.local {
+			background-attachment: local;
+		}
+	</style>
+</head>
+<body>
+	<div style="width: 20px; height: 400px;"></div>
+	<div class="div_img scroll">
+		문명이 출현하면서 사회집단 또는 부족에 따라서 전통적인 요리법이 정착되기 시작했다. 기후, 토양, 동물 분포와 같은 지역적인 요인에 따라서 서로 다른 전통이 만들어졌다. 사람들이 얼마나 청결한 것을 좋아하는가와 자신들의 사회구조를 지키기 위해서 어떤 종교적 금기를 지키는가에 따라서 요리법이 달라지기도 했다.[2] 전통 음식은 국가, 지역별로 다음과 같이 나뉜다:
+	</div>
+	<div class="div_img fixed">
+		문명이 출현하면서 사회집단 또는 부족에 따라서 전통적인 요리법이 정착되기 시작했다. 기후, 토양, 동물 분포와 같은 지역적인 요인에 따라서 서로 다른 전통이 만들어졌다. 사람들이 얼마나 청결한 것을 좋아하는가와 자신들의 사회구조를 지키기 위해서 어떤 종교적 금기를 지키는가에 따라서 요리법이 달라지기도 했다.[2] 전통 음식은 국가, 지역별로 다음과 같이 나뉜다:
+	</div>
+	<div class="div_img local">
+		문명이 출현하면서 사회집단 또는 부족에 따라서 전통적인 요리법이 정착되기 시작했다. 기후, 토양, 동물 분포와 같은 지역적인 요인에 따라서 서로 다른 전통이 만들어졌다. 사람들이 얼마나 청결한 것을 좋아하는가와 자신들의 사회구조를 지키기 위해서 어떤 종교적 금기를 지키는가에 따라서 요리법이 달라지기도 했다.[2] 전통 음식은 국가, 지역별로 다음과 같이 나뉜다:
+	</div>
+	<div style="width: 20px; height: 1000px;"></div>
+</body>
+</html>

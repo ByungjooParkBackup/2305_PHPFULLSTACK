@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		section {
+			width: 500px;
+			height: 500px;
+			border: 1px solid #000;
+		}
+		.div_staic {
+			width: 150px;
+			height: 150px;
+			border: 1px solid #000;
+			position: static;
+			top: 50px;
+			left: 50px;
+		}
+		.div_fixed {
+			width: 50px;
+			height: 50px;
+			border: 1px solid #000;
+			position: fixed;
+			top: 50px;
+			right: 80px;
+		}
+		.div_relative1 {
+			width: 150px;
+			height: 150px;
+			border: 1px solid #000;
+			position: relative;
+			top: 10px;
+			left: 10px;
+		}
+		.div_relative2 {
+			width: 150px;
+			height: 150px;
+			border: 1px solid #000;
+			position: relative;
+			top: -10px;
+			left: 50px;
+		}
+	</style>
+
+</head>
+<body>
+	<section>
+		<div class="div_staic">staic</div>
+		<div class="div_fixed">fixed</div>
+		<div class="div_relative1">relative1</div>
+		<div class="div_relative2">relative2</div>
+	</section>
+</body>
+</html>
