@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		fieldset {
+			margin: 0 auto;
+			width: 500px;
+			background: url(../Example/img/uncle-sam.jpg);
+			background-size: cover;
+		}
+		legend {
+			font-size: 30px;
+			font-weight: 900;
+			color: fuchsia;
+		}
+		form {
+			font-size: 15px;
+			font-weight: 900;
+		}
+		.label_required::before {
+			content: '*';
+			color: red;
+		}
+		:focus {
+			outline: none;
+			border: 3px solid red;
+		}
+		input, textarea {
+			background: transparent;
+		}
+		:checked + label {
+			color: red;
+		}
+		#textbox_etc {
+			vertical-align: top;
+		}
+		#btn_send {
+			position: relative;
+		}
+		#btn_send:hover::after {
+			content: '내용을 다시 한 번 확인해 주세요.';
+			background-color: black;
+			color: white;
+			width: 300px;
+			font-size: 20px;
+			position: absolute;
+			top: 0px;
+			left: 56px;
+		}
+	</style>
+</head>
+<body>
+	<fieldset>
+		<legend>I want YOU!</legend>
+		<form class="form_1">
+			<label class="label_required" for="name">이름</label>
+			<input type="text" id="name" required>
+			<br><br>
+
+			<label class="label_required" for="age">나이</label>
+			<input type="number" id="age" required min="20">
+			<br><br>
+
+			<span class="label_required">성별</span>
+			<input type="radio" name="sex" id="male" required> 
+			<label for="male">남자</label>
+			<input type="radio" name="sex" id="female"> 
+			<label for="female">여자</label>
+			<br><br>
+			
+			<label for="textbox_etc">요청사항</label>
+			<textarea name="textbox_etc" id="textbox_etc" cols="30" rows="10" placeholder="요청 사항 입력"></textarea>
+			<br><br>
+
+			<button id="btn_send" type="submit">보내기</button>
+		</form>
+	</fieldset>
+</body>
+</html>
