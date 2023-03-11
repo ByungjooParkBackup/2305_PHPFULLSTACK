@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		section {
+			width: 500px;
+			height: 500px;
+			border: 1px solid #000;
+		}
+		.div_staic {
+			width: 150px;
+			height: 150px;
+			border: 1px solid #000;
+			position: static; /* 기본값 */
+			top: 50px; /* static이므로 설정값 적용 안됨 */
+			left: 50px; /* static이므로 설정값 적용 안됨 */
+		}
+		.div_fixed {
+			width: 50px;
+			height: 50px;
+			border: 1px solid #000;
+			position: fixed; /* 뷰포트 기준으로 position 설정 */
+			top: 50px; /* top 기준으로 50px 이동 */
+			right: 80px; /* right 기준으로 80px 이동 */
+		}
+		.div_relative1 {
+			width: 150px;
+			height: 150px;
+			border: 1px solid #000;
+			position: relative; /* 자신을 기준으로 position 설정 */
+			top: 10px; /* top 기준으로 10px 이동 */
+			left: 10px; /* left 기준으로 10px 이동 */
+		}
+		.div_relative2 {
+			width: 150px;
+			height: 150px;
+			border: 1px solid #000;
+			position: relative; /* 자신을 기준으로 position 설정 */
+			top: -10px; /* top 기준으로 -10px 이동 */
+			left: 50px; /* left 기준으로 50px 이동 */
+		}
+	</style>
+
+</head>
+<body>
+	<section>
+		<div class="div_staic">staic</div>
+		<div class="div_fixed">fixed</div>
+		<div class="div_relative1">relative1</div>
+		<div class="div_relative2">relative2</div>
+	</section>
+</body>
+</html>

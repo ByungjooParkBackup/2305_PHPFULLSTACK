@@ -1,62 +1,88 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<style>
-		main,
-		section,
-		article,
-		div {
-			border: 1px solid black;
-			padding: 20px;
-		}
-		main {
-			max-width: 600px;
-			margin: 0 auto;
-			background-color: yellow;
-		}
-		section {
-			background-color: aqua;
-		}
-		article {
-			background-color: blue;
-		}
-		div {
-			background-color: white;
-		}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        main, section, article {
+            padding: 20px;
+        }
+        main {
+            background-color: yellow;
+        }
+        section {
+            background-color: aqua;
+            /* position: relative; */
+        }
+        article {
+            background-color: blue;
+            height: 1000px;
+        }
+        .div_static {
+            background-color: white;
+        }
+        .div_relative {
+            background-color: red;
+            /* position: relative;
+            left: -30px; */
+        }
+        .div_absolute {
+            background-color: gray;
+            /* position: absolute;
+            top: 30px; */
+        }
+        .div_fixed {
+            background-color: green;
+            /* position: fixed;
+            bottom: 10%;
+            right: 10%; */
+        }
+        .div_sticky {
+            background-color: blueviolet;
+            position: sticky;
+            top: 0px;
+        }
 
-	</style>
+    </style>
 </head>
 <body>
-	<!-- 
+    <!-- 
 		position 속성 : HTML 요소를 배치하는 방법을 지정합니다.
 			** 속성 값 **
-			-static : 기본값으로 문서의 흐름에 맞춰 배치합니다.
+			-static : 기본값으로 일반적인 문서의 흐름에 맞춰 배치합니다.
 			-relative : 
 				static 위치에서 top, right, bottom, left와 같은 속성에 의한 상대적인 위치값을 지정합니다.
 				그외에는 static와 같습니다.
 			-absolute :
+				요소가 문서의 일반적인 흐름을 따르지 않게 합니다.
 				relative값을 사용한 상위 요소를 기준으로 위치값을 지정합니다.
 				position: static 속성을 가지고 있지 않은 부모를 기준으로 움직입니다.
 			-fixed : 뷰 포트을 기준으로 위치값을 지정합니다.
-
-	 -->
-	<main>
-		main
-		<section>
-			section
-			<article>
-				article
-				<div>div1</div>
-				<div>div2</div>
-				<div>div3</div>
-				<div>div4</div>
-				<div>div5</div>
-			</article>
-		</section>
-	</main>
+			-sticky :
+				요소가 HTML 문서안에서 static과 같이 일반적인 흐름에 따라가다가
+				스크롤 위치가 임계점에 이르면 화면에 고정할 수 있는 속성입니다.
+				top 속성만 적용됩니다.
+				자신의 바로 위의 부모요소 안에서만 적용됩니다.
+                
+		z-index 속성 :
+			HTML 요소의 배치 순서를 결정하는 속성입니다.
+			position (relative, absolute, fixed)속성이 적용된 요소에서만 작동
+	-->
+    <main>
+        main
+        <section>
+            section
+            <article>
+                article
+                <div class="div_static">static</div>
+                <div class="div_relative">relative</div>
+                <div class="div_absolute">absolute</div>
+                <div class="div_fixed">fixed</div>
+                <div class="div_sticky">sticky</div>
+            </article>
+        </section>
+    </main>
 </body>
 </html>

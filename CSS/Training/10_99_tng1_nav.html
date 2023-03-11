@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.nav_ul {
+			margin: 50px auto;
+			list-style: none;
+			padding: 0;
+			width: 593px;
+			height: 40px;
+			background: #c5c5c5;
+			box-shadow: 1px 5px 5px 5px #4d4d4d;
+		}
+		.nav_ul li {
+			float: left;
+			border-right: 1px solid #4d4d4d;
+			background: #c5c5c5;
+			width: 98px;
+			height: 100%;
+			text-align: center;
+		}
+		a {
+			color: black;
+			text-decoration: none;
+			display:block;
+			height: 100%;
+			line-height: 40px;
+		}
+		/* 마우스 올렸을 때 마지막 자식요소 빼고 나머지 설정 */
+		.nav_ul li:not(:last-child) a:hover {
+			background-color:#555;
+			color:#fff;
+		}
+		/* 마지막 자식요소 오른쪽 외곽선 없애기 */
+		.nav_ul li:last-child {
+			border-right:none; 
+		}
+		/* 마우스 올렸을 때 마지막 자식요소에만 설정 */
+		.nav_ul li:last-child a:hover { 
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<ul class="nav_ul">
+			<li><a href="#">메뉴1</a></li>
+			<li><a href="#">메뉴2</a></li>
+			<li><a href="#">메뉴3</a></li>
+			<li><a href="#">메뉴4</a></li>
+			<li><a href="#">메뉴5</a></li>
+			<li><a href="#">메뉴6</a></li>
+		</ul>
+	</nav>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+			가상 클래스 : 선택하고자 하는 HTML 요소의 특별한 '상태(state)'를 명시할 때 사용합니다.
+				** 주의 : 작동여부 등을 이유로 link → visited → hover → active 순으로 선언하여 사용하길 권장 **
+				:link : 아직 방문하지 않은 요소에 스타일을 적용합니다.
+				:visited : 방문한 적이 있는 요소에 스타일을 적용합니다.
+				:hover : 마우스 포인터가 요소 위에 올라오면 스타일을 적용합니다.
+				:active : 포커스를 받은 요소에 스타일을 적용합니다.
+				:checked : 선택한 항목의 스타일을 적용
+				:target : 앵커 대상에 스타일을 적용
+
+				:nth-child(n) : n번째 자식요소를 선택합니다. (n은 정수, odd, even)
+				A:nth-of-type(n) : A자식요소 중 n번째 자식요소를 선택합니다. (n은 정수, odd, even)
+				:not(selector) : 해당 selector은 제외합니다.
+
+				::first-letter : 텍스트의 첫 글자만을 선택합니다. 단, 블록 레벨 요소(block-level-element)에만 사용할 수 있습니다.
+				::first-line : 텍스트의 첫 라인만을 선택합니다. 단, 블록 레벨 요소(block-level-element)에만 사용할 수 있습니다.
+				::before : 특정 요소의 content 바로 앞에 다른 요소를 삽입할 때 사용합니다.
+				::after : 특정 요소의 content 바로 뒤에 다른 요소를 삽입할 때 사용합니다.
+				::selection : 해당 요소에서 사용자가 선택한 부분만을 선택할 때 사용합니다.
+        */
+
+        a:link {
+            color: aqua;
+        }
+        a:visited {
+            color: #30ff02;
+        }
+        a:hover {
+            background-color: crimson;
+        }
+        a:active {
+            background-color: aqua;
+        }
+        nav ul li {
+            float: left;
+            width: 100px;
+            padding: 10px;
+            list-style: none;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        input:focus {
+            outline: none;
+            border: 1px solid #ff00e6;
+        }
+        #target_1:target {
+            background-color: burlywood;
+        }
+        /* .container :nth-child(1) {
+            background-color: yellow;
+        }
+        .container p:nth-of-type(1) {
+            background-color: #30ff02;
+        } */
+        .container :not(h2) {
+            background-color: #ff00e6;
+        }
+        .container_2 .pf_1::first-letter {
+            background-color: cornflowerblue;
+        }
+        .container_2 .pf_2::first-line {
+            background-color: orange;
+        }
+
+        .pf_1 > span::before {
+            content: '중요';
+            color: red;
+        }
+        .pf_2 > span::after {
+            content: '중요';
+            color: red;
+        }
+        .container_2 p::selection {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>가상 요소</legend>
+        <div class="container_2">
+            <h2>h2_1</h2>
+            <p class="pf_1">문명이 출현하면서 <span>사회집단</span> 또는 부족에 따라서 전통적인 요리법이 정착되기 시작했다. 기후, 토양, 동물 분포와 같은 지역적인 요인에 따라서 서로 다른 전통이 만들어졌다. 사람들이 얼마나 청결한 것을 좋아하는가와 자신들의 사회구조를 지키기 위해서 어떤 종교적 금기를 지키는가에 따라서 요리법이 달라지기도 했다.</p>
+            <p class="pf_2">문명이 출현하면서 <span>사회집단</span> 또는 부족에 따라서 전통적인 요리법이 정착되기 시작했다. 기후, 토양, 동물 분포와 같은 지역적인 요인에 따라서 서로 다른 전통이 만들어졌다. 사람들이 얼마나 청결한 것을 좋아하는가와 자신들의 사회구조를 지키기 위해서 어떤 종교적 금기를 지키는가에 따라서 요리법이 달라지기도 했다.</p>
+
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>구조 가상 클래스</legend>
+        <div class="container">
+            <h2>h2_1</h2>
+            <p>p_1</p>
+            <p>p_2</p>
+            <h2>h2_1</h2>
+            <p>p_3</p>
+        </div>
+    </fieldset>
+
+    <a href="https://naver.com">Naver</a>
+
+    <nav>
+        <ul>
+            <li><a href="#target_1">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            <li><a href="#">메뉴5</a></li>
+        </ul>
+    </nav>
+    <br><br><br><br>
+    <span id="target_1">target 테스트</span>
+    <br><br>
+    <label for="input_1">이름</label>
+    <input type="text" id="input_1">
+</body>
+</html>
