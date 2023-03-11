@@ -25,6 +25,7 @@
 			font-size: 15px;
 			font-weight: 900;
 		}
+		/* 필수 입력사항의 lavel에 표식을 설정합니다. */
 		.label_required::before {
 			content: '*';
 			color: red;
@@ -34,7 +35,7 @@
 			border: 3px solid red;
 		}
 		input, textarea {
-			background: transparent;
+			background: transparent; /* 배경을 투명하게 설정 */
 		}
 		:checked + label {
 			color: red;
@@ -43,15 +44,16 @@
 			vertical-align: top;
 		}
 		#btn_send {
-			position: relative;
+			position: relative; /* 상위요소에 relative 설정 */
 		}
+		/* 버튼에 마우스 올릴시 적용 */
 		#btn_send:hover::after {
 			content: '내용을 다시 한 번 확인해 주세요.';
 			background-color: black;
 			color: white;
 			width: 300px;
 			font-size: 20px;
-			position: absolute;
+			position: absolute; /* 위치 조절을 위해 absolute 설정 */
 			top: 0px;
 			left: 56px;
 		}
