@@ -51,12 +51,16 @@
 		논리적인 작업의 단위를 묶어서 DML에 의해 조작된 결과를 작업단위(트랜잭션) 별로 제어하기위해 사용합니다.
 
 8. MariaDb & HediSQL Install
-	- 참조 : https://kitty-geno.tistory.com/55
+	- 참조 : https://m.blog.naver.com/heartflow89/221074331956
 
 	- 샘플데이터 베이스
-		>  https://github.com/ByungjooPark/PHPFULLSTACK.git 
+		> 파일 다운로드 및 압축해제 : https://github.com/ByungjooPark/PHPFULLSTACK.git 
 			* DataBase > Sample > 0_sample1_employees.zip
-		> 
+		> cmd 관리자권한으로 실행
+		> "employees.sql"이 있는 디렉토리까지 이동 : cd 커멘드 이용
+		> mariaDB접속 : "mysql -u root -p" 입력 후 패스워드 입력해서 
+		> sql 실행 : "source employees.sql;" 입력
+		> employees DB 확인 : show database;
 
 	- hediSQL autocommit설정 해제
 		> SELECT @@autocommit;
