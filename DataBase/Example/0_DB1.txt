@@ -51,9 +51,16 @@
 		논리적인 작업의 단위를 묶어서 DML에 의해 조작된 결과를 작업단위(트랜잭션) 별로 제어하기위해 사용합니다.
 
 8. MariaDb & HediSQL Install
-	참조 : https://kitty-geno.tistory.com/55
+	- 참조 : https://kitty-geno.tistory.com/55
 
-	샘플데이터 베이스 : DataBase > Sample > 0_sample1_employees.zip
+	- 샘플데이터 베이스
+		>  https://github.com/ByungjooPark/PHPFULLSTACK.git 
+			* DataBase > Sample > 0_sample1_employees.zip
+		> 
+
+	- hediSQL autocommit설정 해제
+		> SELECT @@autocommit;
+		> SET @@autocommit:0;
 
 
 **********************************
