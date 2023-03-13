@@ -1,0 +1,40 @@
+
+0. SELECT문의 기본 구조
+	SELECT [DISTINCT] [컬럼명]
+	FROM [테이블명]
+	WHERE [쿼리 조건]
+	GROUP BY [컬럼명] HAVING [집계함수 조건]
+	ORDER BY [속성명 ASC || 속성명 DESC]
+	;
+
+1. SELECT [컬럼명] FROM [테이블명] ;
+	- *(Asterisk)로 조회
+		SELECT * FROM employees;
+
+	- 속성명으로 조회
+		SELECT emp_no FROM employees;
+		SELECT emp_no, first_name FROM employees;
+
+	** 실습 **
+		> dept_emp 테이블의 데이터를 조회해 주세요.
+		> title 테이블의 데이터를 조회해 주세요.
+		> dept_emp 테이블에서 생일, 성, 이름, 성별을 조회해 주세요.
+		> title 테이블에서 사번, 직책, 시작일, 종료일을 조회해 주세요.
+
+2. SELECT [컬럼명] FROM [테이블명] WHERE [쿼리 조건];
+	- 특정 데이터와 일치하는 조회
+		SELECT * FROM employees WHERE emp_no = 10001;
+		SELECT * FROM employees WHERE first_name = 'Georgi';
+	
+	- 관계 연산자를 이용하여 조회
+		SELECT * FROM employees WHERE emp_no <= 10005;
+	
+	- AND, OR로 여러 조건을 설정하여 조회
+		SELECT * FROM employees WHERE emp_no <= 10001 and emp_no <= 10005;
+		SELECT * FROM employees WHERE emp_no <= 10003 or emp_no >= 499997;
+
+	** 실습 **
+		> dept_emp 테이블에서 생일, 성, 이름, 성별을 조회해 주세요.
+		> title 테이블에서 사번, 직책, 시작일, 종료일을 조회해 주세요.
+
+3. 
