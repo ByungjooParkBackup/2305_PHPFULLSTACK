@@ -1,0 +1,123 @@
+html {
+    scroll-behavior: smooth; /* 스크롤 부드럽게 설정 */
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    background-color: goldenrod;
+    text-decoration: none;
+    color: white;
+    border-radius: .25rem;
+    text-align: center;
+    display: inline-block;
+    transition: all .3s; /* 모든 속성에 0.3초 딜레이로 적용 */
+}
+
+a:hover {
+    opacity: .6; /* 불투명도 0.6 적용 */
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.wrapper {
+    padding-bottom: 64px;
+}
+
+.hero {
+    padding: 4rem 2rem;    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));/* 너비의 최소값과 최대값을 주고 auto-fit을 주어, 자동으로 컬럼 수를 조절 */
+    align-items: center;
+}
+
+.hero>* {
+    color: white;
+}
+
+.hero>h1 {
+    font-size: 4rem;
+    padding-bottom: 1rem;
+}
+
+.hero>article>p {
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.hero>article>a {
+    padding: 1rem;
+    margin-top: .75rem;
+}
+
+.breweries {
+    padding: 2rem;
+}
+
+.breweries>ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* 너비의 최소값과 최대값을 주고 auto-fit을 주어, 자동으로 컬럼 수를 조절 */
+    grid-gap: 1rem; /* 컬럼과 로우 사이의 간격 조절 */
+}
+
+.breweries>ul>li {
+    border: 1px solid #E2E2E2;
+    border-radius: .5rem;
+}
+
+.breweries>ul>li>figure {
+    max-height: 220px;
+    /*overflow: hidden;*/
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    position: relative;
+}
+
+.breweries>ul>li>figure>img {
+    width: 100%;
+}
+
+.breweries>ul>li>figure>figcaption {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .7);
+    width: 100%;
+}
+
+.breweries>ul>li>figure>figcaption>h3 {
+    color: white;
+    padding: .75rem;
+    font-size: 1.25rem;
+}
+
+.breweries>ul>li>p {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 1rem .75rem;
+    color: #666666;
+}
+
+.breweries>ul>li>a {
+    padding: .5rem 1rem;
+    margin: .5rem;
+}
+
+/* footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: .75rem;
+    color: white;
+    text-align: center;
+    font-size: .75rem;
+}
