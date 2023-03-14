@@ -19,18 +19,12 @@
 		SELECT emp_no, first_name
 		FROM employees;
 
-	** 실습 **
-		> 소속 부서(dept_emp) 테이블의 데이터를 조회해 주세요.
-		> 직책(title) 테이블의 데이터를 조회해 주세요.
-		> 소속 부서(dept_emp) 테이블에서 생일, 성, 이름, 성별을 조회해 주세요.
-		> 직책(title) 테이블에서 사번, 직책, 시작일, 종료일을 조회해 주세요.
-
 2. 특정 조건으로 조회 : SELECT [컬럼명] FROM [테이블명] WHERE [쿼리 조건];
 	- 특정 데이터와 일치하는 조회
 		SELECT *
 		FROM employees
 		WHERE emp_no = 10001;
-
+aaa
 		SELECT *
 		FROM employees
 		WHERE first_name = 'Georgi';
