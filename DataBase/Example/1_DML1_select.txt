@@ -24,7 +24,7 @@
 		SELECT *
 		FROM employees
 		WHERE emp_no = 10001;
-aaa
+
 		SELECT *
 		FROM employees
 		WHERE first_name = 'Georgi';
