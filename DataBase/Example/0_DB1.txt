@@ -62,10 +62,9 @@
 		> sql 실행 : "source employees.sql;" 입력
 		> employees DB 확인 : show database;
 
-	- hediSQL autocommit설정 해제
-		> SELECT @@autocommit;
-		> SET @@autocommit:0;
-
+	- autocommit설정 해제
+		> mariaDB설치 위치 > data > my.ini
+			[mysqld]에 autocommit=0 추가
 
 **********************************
 ****** 이하 필요에 따라 참조 ******
