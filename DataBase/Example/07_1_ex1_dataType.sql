@@ -10,6 +10,7 @@
 -- 	LONGTEXT : 최대 4GB크기의 TEXT 데이터 값을 저장
 -- 	LONGBLOB : 최대 4GB크기의 BLOB 데이터 값을 저장
 -- 				(Binary Large Object의 약자, 주로 이미지, 비디오, 사운드 등과 같은 멀티미디어 객체들을 바이너리 형태로 저장할 때 사용 )
+--  ENUM(값1, 값2) : 정해진 값들만 입력 가능하도록 하는 데이터 형식
 
 -- 3. 날짜 및 시간 데이터 형식
 -- 	DATE : 3byte 'YYYY-MM-DD'형식
