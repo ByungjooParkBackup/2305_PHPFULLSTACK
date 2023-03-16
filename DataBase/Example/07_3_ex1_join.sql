@@ -1,3 +1,6 @@
+-- 0. JOIN이란?
+-- 	두개 이상의 테이블을 묶어서 하나의 결과 집합으로 출력하는 것입니다.
+
 -- 1. INNER JOIN의 구조
 -- 	SELECT 컬럼1, 컬럼2
 -- 	FROM 테이블1 INNER JOIN 테이블2
@@ -21,7 +24,7 @@ SELECT dept.dept_no, dept.dept_name, d_m.emp_no
 FROM departments dept
 	CROSS JOIN dept_manager d_m;
 
--- 4. SELF JOIN : 자기 자신을 조인
+-- 3. SELF JOIN : 자기 자신을 조인
 -- SELECT 컬럼1, 컬럼2 ...
 -- FROM 테이블1
 -- 	INNER JOIN 테이블1
@@ -32,7 +35,7 @@ FROM employees emp1
 		ON emp1.sup_no = emp2.emp_no
 WHERE emp1.emp_no = 10001;
 
--- 5. UNION / UNION ALL : 
+-- 4. UNION / UNION ALL : 
 -- 	- 두 쿼리의 결과를 합칩니다.
 -- 	- UNION은 중복 값을 제거하고 출력하고, UNION ALL은 중복 값도 출력합니다.
 -- SELECT ... FROM ...
