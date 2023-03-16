@@ -7,3 +7,8 @@ SELECT
 			ELSE '팀원'
 		END AS 'k_title'
 FROM titles;
+
+-- 자기의 성과 이름을 CONCAT()를 이용해서 출력해 주세요.
+SELECT CONCAT(last_name, ' ', first_name)
+FROM employees
+WHERE emp_no = 500000;
