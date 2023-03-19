@@ -54,7 +54,6 @@
 -- 	,CONSTRAIN CHECK명 CHECK (조건) -- CHECK설정
 -- );
 
-
 -- 2. 테이블 변경
 -- 	- 컬럼 추가
 -- 		ALTER TABLE 테이블명 ADD COLUMN 컬럼 데이터타입;

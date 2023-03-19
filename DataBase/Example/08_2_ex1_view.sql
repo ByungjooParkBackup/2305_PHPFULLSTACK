@@ -9,7 +9,7 @@
 -- 		SELECT 문
 -- 	;
 -- 	** [OR REPLACE] : 기존의 뷰가 있을 경우 덮어쓰기를 합니다. **
-CREATE OR REPLACE VIEW TEST_VIEW
+CREATE OR REPLACE VIEW test_view
 AS
 	SELECT ti.title, COUNT(*) cnt
 	FROM employees emp
