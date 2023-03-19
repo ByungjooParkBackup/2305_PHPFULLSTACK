@@ -20,9 +20,6 @@ AS
 	GROUP BY ti.title
 ;
 
-SELECT * FROM test_view WHERE title = 'Staff';
-
-
 -- 3. VIEW 삭제
 -- 	DROP VIEW 뷰명;
 DROP VIEW test_view;
