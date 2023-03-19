@@ -1,0 +1,4 @@
+1. ERD작성(ERD CLOUD)
+	- https://www.erdcloud.com/
+	- "Try ERDCloud"를 클릭하여 시작
+	- 아이디 등록 후 사용가능
