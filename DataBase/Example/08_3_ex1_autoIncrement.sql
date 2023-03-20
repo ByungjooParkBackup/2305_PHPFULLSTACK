@@ -16,9 +16,8 @@ ALTER TABEL 테이블명 MODIFY 컬럼명 INT NOT NULL AUTO_INCREMENT;
 
 --	- auto_increment의 값을 초기화 할 때
 ALTER TABLE 테이블명 AUTO_INCREMENT=1;
-DELETE FROM 테이블명;
 TRUNCATE TABLE 테이블명;
 
 -- 4. auto_increment사용시 주의사항
--- 	스토리지 엔진인 InnoDB 의 경우 SELECT MAX(num) 구문을 사용하여 auto_increment 값을 새로 저장하는데,
+-- 	스토리지 엔진이 InnoDB 의 경우 SELECT MAX(num) 구문을 사용하여 auto_increment 값을 새로 저장하는데,
 -- 	이 때문에 증가 값이 다른 테이블들과 종속되는 값을 가지면서 서로 달라지게 되면 문제가 생길수도 있으니 주의하여 사용해야 합니다.
