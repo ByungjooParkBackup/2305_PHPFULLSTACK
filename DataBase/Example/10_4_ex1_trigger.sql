@@ -11,7 +11,6 @@
 	OLD - 예전 데이터, delete 로 삭제 된 데이터 또는 update 로 바뀌기 전의 데이터
 	NEW - 새 데이터, insert 로 삽입된 데이터 또는 update 로 바뀐 후의 데이터
 
-
 4. 트리거 생성
 	DELIMITER $$
 	CREATE TRIGGER 트리거명
@@ -36,4 +35,4 @@
 	SHOW TRIGGERS;
 
 7. 트리거 삭제
-	DELETE TRIGGERS;
+	DROP TRIGGER 트리거명;

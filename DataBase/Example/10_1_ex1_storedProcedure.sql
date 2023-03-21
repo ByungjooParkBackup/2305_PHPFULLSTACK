@@ -38,7 +38,7 @@
 		BEGIN
 			프로시저의 실행 내용 정의
 		END $$
-		DELIMITER;
+		DELIMITER ;
 
 6. 프로시저 호출
 	CALL 프로시저명(매개변수);
