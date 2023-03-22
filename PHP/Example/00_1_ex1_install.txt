@@ -16,7 +16,7 @@
 		- 767, 768행 : 주석해제 및 설정
 			On windows:
 			extension_dir = "PHP설치경로/ext"
-		- 972행 : extension 관련 설정 주석해제 (필요에 따라 주석 제거)
+		- 936행 : extension 관련 설정 주석해제 (필요에 따라 주석 제거)
 			extension=mbstring
 		- 977행 : 시간대 설정
 			date.timezone = Asia/Seoul
@@ -53,8 +53,8 @@
 				DirectoryIndex index.php index.html
 			</IfModule>
 		- 가장 마지막줄에 아래 설정 추가 (PHP연동 관련 설정)
-			PHPIniDir "C:/php8"
-			LoadModule php_module "C:/php8/php8apache2_4.dll"
+			PHPIniDir "C:/php8.2.4"
+			LoadModule php_module "C:/php8.2.4/php8apache2_4.dll"
 			AddHandler application/x-httpd-php .php
 			AddType application/x-httpd-php .php .html
 		- 저장
@@ -84,7 +84,7 @@
 	3-2. PHP Debug
 		디버깅 기능을 지원
 
-4. 디버깅 설절
+4. 디버깅 설정
 	4-1. localhost/phpinfo.php 에 접속
 		- 전체 선택(컨트롤 + a) 후, 복사 
 	
