@@ -92,3 +92,7 @@
 		"Analyse my phpinfo() output" 버튼 클릭
 	
 	4-3. Instructions의 순서대로 진행
+
+5. PHP 관련 정보
+	5-1. 공식 사이트
+		https://www.php.net/
