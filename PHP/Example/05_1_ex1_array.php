@@ -40,28 +40,29 @@
 	//var_dump($arr_temp_3);
 	$arr_temp_3_c = array(9, 10, 11);
 	
-	// 배열의 원소 삭제 : unset()
+	// unset() : 배열의 원소 삭제
 	$arr_week = array("Sun", "Mon", "delete", "Tue", "Wed");
 	unset($arr_week[2]);
 	//print_r($arr_week);
 
-	// 중복되지 않는 원소를 반환 : array_diff()
+	// array_diff() : A배열과 B배열을 비교해서 중복되지 않는 A배열의 원소를 반환 
 	$arr_diff_1 = array("a", "b", "c");
 	$arr_diff_2 = array("a", "b", "d");
 	$arr_diff = array_diff($arr_diff_1, $arr_diff_2);
 	//print_r($arr_diff);
 
 	// 배열의 정렬 : asort(), arsort(), ksort(), krsort()
-	// asort();
+	// asort() : 배열의 값을 오름차순 정렬
 	$arr_asort = array("b", "a", "d", "c");
 	asort($arr_asort);
 	//print_r($arr_asort);
-	// arsort();
+
+	// arsort() : 배열의 값을 내림차순 정렬
 	$arr_arsort = array("b", "a", "d", "c");
 	arsort($arr_arsort);
 	//print_r($arr_arsort);
 
-	// ksort();
+	// ksort() : 배열의 키를 오름차순 정렬
 	$arr_ksort = array("key1" => "val1"
 					, "key3" => "val3"
 					, "key4" => "val4"
@@ -70,7 +71,7 @@
 	ksort($arr_ksort);
 	//print_r($arr_ksort);
 
-	// krsort();
+	// krsort() : 배열의 키를 내림차순 정렬
 	$arr_krsort = array("key1" => "val1"
 						, "key3" => "val3"
 						, "key4" => "val4"
@@ -79,7 +80,7 @@
 	krsort($arr_krsort);
 	//print_r($arr_krsort);
 
-	// array의 사이즈를 반환하는 함수 : count();
+	// count() : 배열 혹은 그 외 것들의 사이즈를 반환하는 함수
 	//echo count($arr_krsort);
 
 	// foreach( $array as $key => $val ){}
