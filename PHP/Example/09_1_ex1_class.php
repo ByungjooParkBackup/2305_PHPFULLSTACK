@@ -1,14 +1,17 @@
 <?php
 
-// CLASS : 동종의 객체들이 모여있는 집합
+// CLASS : 동종의 객체들이 모여있는 집합의 정의하는 것
 
 class Student
 {
 	// 클레스 멤버 변수
+	// 접근제어 지시자 : public, private, protected
 	public $std_name; // 어디서든 접근 가능
 	private $std_id; // Class 내에서만 접근 가능
 	protected $std_age; // 자신과, 상속 Class 내에서만 접근 가능
-	// 접근제어 지시자 : public, private, protected
+
+	// static : 인스턴스를 생성하지 않고도 변수와 함수를 사용할 수 있게 됩니다.
+	public static $std_static = "static입니다.";
 
 	// Class 안에 있는 function을 method라고 부릅니다.
 	public function print_student( $param_std_name, $param_std_age )
@@ -32,7 +35,7 @@ class Student
 		return $this->std_id;
 	}
 }
-// class를 초기화
+// Student Instance 생성
 $obj_Student = new Student;
 // class의 method를 호출
 //$obj_Student->print_student("홍길동", 27);
@@ -51,7 +54,9 @@ $obj_Student->set_std_id("갑순이id");
 
 
 ////////////
-// 생성자(constructor)
+// 생성자(constructor) : 
+//	 	- 클래스를 이용하여 객체를 생성할 때 사용
+//		- 생성자를 정의 하지 않을때는 디폴트 생성자가 선언 됨
 class food
 {
 	private $food_name;
@@ -68,5 +73,9 @@ class food
 	}
 }
 
-$obj_food = new food( "탕수육" );
+echo Student::$std_static; // static객체는 instance생성을 하지 않아도 호출할 수 있습니다.
+
+$obj_food = new food( "탕수육" ); // 생성자를 이용해서 instance를 생성
 $obj_food->print_food_name();
+
+
