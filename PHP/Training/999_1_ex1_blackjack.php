@@ -48,6 +48,7 @@ class BlackJack
 		shuffle( $this->arr_deck );
 	}
 
+	// TODO : debug
 	public function debug()
 	{
 		var_dump( $this->arr_deck );
