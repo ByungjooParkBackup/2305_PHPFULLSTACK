@@ -1,4 +1,10 @@
 <?php
+//-----------------------------------------------------
+// 파일명 		: 999_1_ex1_blackjack.php
+// 기능			: 블랙잭 게임(터미널에서 입력값 받아 진행)
+// 이력			: v001 : new - BJ.Park
+//-----------------------------------------------------
+
 //블랙잭 게임
 //-카드 숫자를 합쳐 가능한 21에 가깝게 만들면 이기는 게임
 
@@ -18,43 +24,112 @@
 // 6-2. 17 이상일 경우는 받지 않는다.
 //7. 1입력 : 카드 더받기, 2입력 : 카드비교, 0입력 : 게임종료
 //8. 한번 사용한 카드는 다시 쓸 수 없다.
-
-class BlackJack
+class Card
 {
-	private $arr_num;
-	private $arr_shape;
-	private $arr_deck;
+	private $arr_card;
+	private $cnt;
 
+	public function __construct( $param_arr )
+	{
+		$this->$arr_card = $param_arr;
+		$this->$cnt = sizeof( $param_arr );
+	}
+}
+
+class Deck
+{
+	private $arr_card_num; 		// 카드 번호
+	private $arr_card_shape;	// 카드 모양
+	private $arr_deck;			// 게임용 덱
+	private $cnt_deck;			// 덱 카운트
 	// construct
 	public function __construct()
 	{
-		$this->arr_num = array( "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K");
-		$this->arr_shape = array("♠", "♣", "◆", "♥");
+		$this->arr_card_num		= array( "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K");
+		$this->arr_card_shape	= array("♥", "◆", "♣", "♠");
+		$this->cnt_deck			= ( sizeof( $this->arr_card_num ) * sizeof( $this->arr_card_shape ) ) - 1;
 		$this->set_deck();
 	}
 
-	// set
+	// ---------------------------------
+	// 메소드명	: set_deck
+	// 기능		: 랜덤하게 카드 덱을 셋팅
+	//			 배열 depth1 : 인덱스배열, depth2 : 연상배열
+	// 파라미터	: 없음
+	// 리턴값	: 없음
+	// ---------------------------------
 	private function set_deck()
 	{
-		// 카드 52장 덱에 셋팅
-		foreach( $this->arr_shape as $shape )
+		// 카드 52장 덱에 셋팅 ( 예 : array( array( "card_num" => 1, "card_shape" => 1 ), ... ) )
+		foreach( $this->arr_card_shape as $shape_key => $shape_val )
 		{
-			foreach( $this->arr_num as $num )
+			foreach( $this->arr_card_num as $num )
 			{
-				$this->arr_deck[] = $num.$shape;
+				$this->arr_deck[] = array( "card_num" => $num, "card_shape" => $shape_key);
 			}
 		}
 		// 덱 셔플
 		shuffle( $this->arr_deck );
 	}
 
+	// ---------------------------------
+	// 메소드명	: give_card
+	// 기능		: 덱에서 카드 한장을 파라미터에 주기
+	// 파라미터	: Array		&$param_arr 
+	// 리턴값	: 없음
+	// ---------------------------------
+	public function give_card( &$param_arr )
+	{
+		$param_arr[] = $this->arr_deck[$this->cnt_deck];
+
+		// 덱 카운트 1감소
+		$this->cnt_deck--;
+	}
+	
 	// TODO : debug
 	public function debug()
 	{
-		var_dump( $this->arr_deck );
+		var_dump( $this->arr_deck ,$this->cnt_deck );
+	}
+}
+
+class BlackJack extends Deck
+{
+	private $arr_user_card;		// 유저 현재 카드
+	private $arr_com_card;		// 딜러 현재 카드
+
+	// ---------------------------------
+	// 메소드명	: start_game_set_card
+	// 기능		: 게임 시작시 카드 2장 주기
+	// 파라미터	: 없음
+	// 리턴값	: 없음
+	// ---------------------------------
+	public function start_game_set_card()
+	{
+		$cnt = 0;
+		while( $cnt <= 1 )
+		{
+			$this->give_card( $this->arr_user_card );
+			$this->give_card( $this->arr_com_card );
+			$cnt++;
+		}
+	}
+	// ---------------------------------
+	// 메소드명	: end_game_set_card
+	// 기능		: 게임 시작시 카드 2장 주기
+	// 파라미터	: 없음
+	// 리턴값	: 없음
+	// ---------------------------------
+
+	// TODO : debug
+	public function debug()
+	{
+		parent::debug();
+		var_dump( $this->arr_user_card,  $this->arr_com_card );
 	}
 }
 $obj_bj = new BlackJack();
+$obj_bj->start_game_set_card();
 $obj_bj->debug();
 
 
