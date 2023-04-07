@@ -2,13 +2,13 @@
 //-----------------------------------------------------
 // 파일명 		: 999_1_ex1_blackjack.php
 // 기능			: 블랙잭 게임(터미널에서 입력값 받아 진행)
-// 이력			: v001 : new - BJ.Park
+// 이력			: v001 : 20230407 new - BJ.Park
 //-----------------------------------------------------
 define( "FILE_NAME_DECK", "999_2_deck.txt");
 define( "FILE_NAME_HAND", "999_2_hand.txt");
 define( "STR_CARD_NUM", "card_num");
 define( "STR_CARD_SHAPE_KEY", "card_shape_key");
-define( "FLG_DEBUG", true );
+define( "FLG_DEBUG", true ); 
 
 //블랙잭 게임
 //-카드 숫자를 합쳐 가능한 21에 가깝게 만들면 이기는 게임
@@ -107,7 +107,7 @@ class Card
 
 	// ---------------------------------
 	// 메소드명	: get_cnt_card
-	// 기능		: 카드 모양 배열 리턴
+	// 기능		: 카드 카운트 리턴
 	// 파라미터	: 없음
 	// 리턴값	: INT		$cnt_card
 	// ---------------------------------
@@ -161,7 +161,7 @@ class Deck
 		{
 			DebugBJ::put_file( FILE_NAME_DECK, $this->arr_deck, "w" );
 		}
-			// ************** DEBUG **************
+		// ************** DEBUG **************
 	}
 
 	// ---------------------------------
@@ -586,8 +586,7 @@ class Play
 }
 
 
-
-$obj_play = new play();
+$obj_play = new Play();
 $obj_play->game_start();
 // $obj_play->set_card();
 
