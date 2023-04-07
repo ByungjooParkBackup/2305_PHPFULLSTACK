@@ -29,6 +29,10 @@ define( "FLG_DEBUG", true );
 // 6-2. 17 이상일 경우는 받지 않는다.
 //7. 1입력 : 카드 더받기, 2입력 : 카드비교, 0입력 : 게임종료
 //8. 한번 사용한 카드는 다시 쓸 수 없다.
+
+// **********************************
+// 클래스	: Card
+// **********************************
 class Card
 {
 	private $arr_card_num; 		// 카드 번호
@@ -39,6 +43,13 @@ class Card
 		$this->arr_card_shape	= array( "♥", "◆", "♣", "♠" );
 	}
 
+	// ---------------------------------
+	// 메소드명	: get_card_num_score
+	// 기능		: 문양 카드 숫자로 변환
+	// 파라미터	: String|INT	$param_num
+	//			 INT			$param_score
+	// 리턴값	: INT
+	// ---------------------------------
 	public function get_card_num_score( $param_num, $param_score )
 	{
 		switch( $param_num )
@@ -61,27 +72,54 @@ class Card
 		}
 	}
 
+	// ---------------------------------
+	// 메소드명	: get_card_shape
+	// 기능		: 카드 모양 리턴
+	// 파라미터	: String	$param_key
+	// 리턴값	: String	"♥", "◆", "♣", "♠"
+	// ---------------------------------
 	public function get_card_shape( $param_key )
 	{
 		return $this->arr_card_shape[$param_key];
 	}
 	
+	// ---------------------------------
+	// 메소드명	: get_arr_card_num
+	// 기능		: 카드 숫자 배열 리턴
+	// 파라미터	: 없음
+	// 리턴값	: Array		$arr_card_num
+	// ---------------------------------
 	public function get_arr_card_num()
 	{
 		return $this->arr_card_num;
 	}
 
+	// ---------------------------------
+	// 메소드명	: get_arr_card_shape
+	// 기능		: 카드 모양 배열 리턴
+	// 파라미터	: 없음
+	// 리턴값	: Array		$arr_card_shape
+	// ---------------------------------
 	public function get_arr_card_shape()
 	{
 		return $this->arr_card_shape;
 	}
 
+	// ---------------------------------
+	// 메소드명	: get_cnt_card
+	// 기능		: 카드 모양 배열 리턴
+	// 파라미터	: 없음
+	// 리턴값	: INT		$cnt_card
+	// ---------------------------------
 	public function get_cnt_card()
 	{
 		return $this->cnt_card;
 	}
 }
 
+// **********************************
+// 클래스	: Deck
+// **********************************
 class Deck
 {
 	private $arr_deck;		// 게임용 덱
@@ -147,6 +185,9 @@ class Deck
 	}
 }
 
+// **********************************
+// 클래스	: Player
+// **********************************
 class Player
 {
 	private $hand;
@@ -161,6 +202,12 @@ class Player
 		$this->obj_card = new Card();
 	}
 
+	// ---------------------------------
+	// 메소드명	: print_open_card
+	// 기능		: 플레이어의 현재 카드 정보를 출력
+	// 파라미터	: 없음
+	// 리턴값	: 없음
+	// ---------------------------------
 	public function print_open_card()
 	{
 		$str = $this->player_name;
@@ -171,22 +218,46 @@ class Player
 		echo $str;
 	}
 
+	// ---------------------------------
+	// 메소드명	: clear_var
+	// 기능		: 플레이어의 현재 카드 정보와 점수를 초기화
+	// 파라미터	: 없음
+	// 리턴값	: 없음
+	// ---------------------------------
 	public function clear_var()
 	{
 		$this->hand = array();
 		$this->score = 0;
 	}
 
+	// ---------------------------------
+	// 메소드명	: set_score
+	// 기능		: 플레이어의 점수를 가산
+	// 파라미터	: INT		$param_score
+	// 리턴값	: 없음
+	// ---------------------------------
 	public function set_score( $param_score )
 	{
 		$this->score += $param_score;
 	}
-
+	
+	// ---------------------------------
+	// 메소드명	: get_score
+	// 기능		: 플레이어의 점수를 반환
+	// 파라미터	: 없음
+	// 리턴값	: INT	score
+	// ---------------------------------
 	public function get_score()
 	{
 		return $this->score;
 	}
 
+	// ---------------------------------
+	// 메소드명	: set_var
+	// 기능		: 플레이어의 카드 정보와 점수를 셋팅
+	// 파라미터	: Object		$param_obj_deck
+	// 리턴값	: 없음
+	// ---------------------------------
 	public function set_var( &$param_obj_deck )
 	{
 		$arr_card = $param_obj_deck->give_card();
@@ -201,29 +272,47 @@ class Player
 		// ************** DEBUG **************
 	}
 
+	// ---------------------------------
+	// 메소드명	: get_hand
+	// 기능		: 플레이어의 카드정보를 반환
+	// 파라미터	: 없음
+	// 리턴값	: Array		hand
+	// ---------------------------------
 	public function get_hand()
 	{
 		return $this->hand;
 	}
 }
 
+// **********************************
+// 클래스	: User extends Player
+// **********************************
 class User extends Player
 {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->player_name = "USER : ";
+		$this->player_name = "USER : "; // USER로 설정
 	}
 }
 
+// **********************************
+// 클래스	: Dealer extends Player
+// **********************************
 class Dealer extends Player
 {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->player_name = "DEALER : ";
+		$this->player_name = "DEALER : "; // DEALER로 설정
 	}
 
+	// ---------------------------------
+	// 메소드명	: set_var
+	// 기능		: (Overriding)플레이어의 카드 정보와 점수를 셋팅
+	// 파라미터	: Object		$param_obj_deck
+	// 리턴값	: 없음
+	// ---------------------------------
 	public function set_var( &$param_obj_deck )
 	{
 		if( $this->get_score() < 17 )
@@ -233,11 +322,14 @@ class Dealer extends Player
 	}
 }
 
+// **********************************
+// 클래스	: Play
+// **********************************
 class Play
 {
 	private $obj_user;		// 유저 클래스
 	private $obj_dealer;	// 딜러 클래스
-	private $obj_deck;
+	private $obj_deck;		// 덱 클래스
 
 	public function __construct()
 	{
@@ -268,6 +360,12 @@ class Play
 		}
 	}
 
+	// ---------------------------------
+	// 메소드명	: chk_score
+	// 기능		: 점수 체크
+	// 파라미터	: 없음
+	// 리턴값	: Boolean	$flg_burst
+	// ---------------------------------
 	public function chk_score()
 	{
 		$user_score = $this->obj_user->get_score();
@@ -321,6 +419,12 @@ class Play
 		return $flg_burst;
 	}
 
+	// ---------------------------------
+	// 메소드명	: chk_result
+	// 기능		: 결과 체크
+	// 파라미터	: 없음
+	// 리턴값	: 없음
+	// ---------------------------------
 	public function chk_result()
 	{
 		$user_score = $this->obj_user->get_score();
@@ -349,6 +453,12 @@ class Play
 		$this->print_result( $arr_player, $int_result );
 	}
 
+	// ---------------------------------
+	// 메소드명	: print_result
+	// 기능		: 결과 출력
+	// 파라미터	: 없음
+	// 리턴값	: 없음
+	// ---------------------------------
 	public function print_result( $param_arr, $param_int_result, $param_str_con = "" )
 	{
 		$str = implode( ", ", $param_arr ). " ";
@@ -372,34 +482,52 @@ class Play
 		echo "\n";
 	}
 
+	// ---------------------------------
+	// 메소드명	: open_player_card
+	// 기능		: 소유한 카드 출력
+	// 파라미터	: 없음
+	// 리턴값	: 없음
+	// ---------------------------------
 	public function open_player_card()
 	{
 		$this->obj_user->print_open_card();
+
+		// ************** DEBUG **************
 		if( FLG_DEBUG )
 		{
 			$this->obj_dealer->print_open_card();
 		}
+		// ************** DEBUG **************
+
 		echo "\n";
 	}
 
+	// ---------------------------------
+	// 메소드명	: clare_player_card
+	// 기능		: 소유한 카드 초기와
+	// 파라미터	: 없음
+	// 리턴값	: 없음
+	// ---------------------------------
 	public function clare_player_card()
 	{
 		$this->obj_user->clear_var();
 		$this->obj_dealer->clear_var();
 	}
 
+	// ---------------------------------
+	// 메소드명	: game_start
+	// 기능		: 게임시작
+	// 파라미터	: 없음
+	// 리턴값	: 없음
+	// ---------------------------------
 	public function game_start()
 	{
+		$flg_clare_card = true;
 		echo "----- Black Jack -----\n";
-		$this->set_card();
-		$flg_clare_card = false;
-		$this->open_player_card();
 		while(true) {
-			fscanf(STDIN, "%d", $input);  
-			echo "입력값 : $input \n";
-			
 			if( $flg_clare_card )
 			{
+				echo "----- New Game -----\n";
 				$this->set_card();
 				$flg_clare_card = false;
 				if( $this->chk_score() )
@@ -412,6 +540,9 @@ class Play
 					$this->open_player_card();
 				}
 			}
+			fscanf(STDIN, "%d", $input);  
+			echo "입력값 : $input \n";
+			
 			if( $input === 1 )
 			{
 				$this->set_card();
@@ -465,6 +596,9 @@ $obj_play->game_start();
 
 
 // ************** DEBUG **************
+// **********************************
+// 클래스	: DebugBJ
+// **********************************
 class DebugBJ
 {
 	public static function put_file( $param_file_name, $param_arr, $param_mode )
