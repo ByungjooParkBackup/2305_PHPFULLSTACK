@@ -49,8 +49,8 @@ let multi = 1;
 
 // foreach : 배열만 루프 가능
 let arr = [1, 2, 3, 4];
-//arr.forEach( function( val ) {
-//	console.log( val );
+//arr.forEach( function( val, key ) {
+//	console.log( key + " : " + val );
 //});
 
 arr = {
@@ -58,14 +58,15 @@ arr = {
 	,u_age: 0
 };
 
-// for...in : 모든 객체를 루프 가능
+// for...in : 모든 객체를 루프 가능, Key에는 접근 가능하지만 Value에는 접근 불가능 합니다.
 //for( let i in arr ) {
 //	console.log( i + " : " + arr[i] );
 //}
 
 arr = [ 5, 4, 3 ];
 arr.num = 2;
-// for...of : 
+// for...of : [Symbol.iterator] 속성을 가지는 객체를 루프
+// ( 내장된 생성자 중 iterable 객체를 만들어내는 생성자 : String, Array, TypedArray, Map, Set )
 for( let i of arr ) {
 	console.log( i );
 }
