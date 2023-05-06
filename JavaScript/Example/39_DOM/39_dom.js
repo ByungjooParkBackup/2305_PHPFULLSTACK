@@ -1,11 +1,16 @@
+// 1. DOM ( Document Object Model )이란? - 교제 P.679 그림 참조
+// 	- 웹 문서를 제어하기 위해서 웹 문서를 객체화한 것
+// 	- DOM API를 통해서 HTML의 구조나 내용 또는 스타일등을 동적으로 조작 가능
 
-//1. 요소를 선택하는 방법
-// 1-1. ID로 요소를 선택하는 방법
+// 2. 요소 선택
+// 	2-1. 고유한 ID로 요소를 요소를 선택
+// 		document.getElementById('')
 const title = document.getElementById('title');
 title.style.color = 'blue'; // id가 title인 요소의 글자색을 파랑색으로 변경
 
 
-// 1-2. 태그명으로 요소를 선택하는 방법
+// 	2-2. 태그명으로 요소를 선택
+// 		document.getElementsByTagName('')
 const li = document.getElementsByTagName('li');
 
 // 탕수육은 노란색, 짬뽕은 빨강색으로 변경
@@ -22,50 +27,49 @@ for( let i = 0; i < li.length; i++ ) {
 	}
 }
 
-// 3. 클래스명으로 요소를 선택하는 방법
+// 	2-3. 클래스로 요소를 선택
+// 		document.getElementsByClassName('')
 const noneli = document.getElementsByClassName('none-li');
 
 
-// 4. CSS 선택자로 요소를 선택하는 방법
-// querySelector() : 복수의 요소가 있다면 가장 첫번째 것만 선택
+// 	2-4. CSS 선택자를 사용해 요소를 찾는 메서드
+// 		document.querySelector() : 복수의 요소가 있다면 가장 첫번째 것만 선택
 const title2 = document.querySelector('#title');
 const li2 = document.querySelector('.none-li');
 
-// querySelectorAll() : 복수의 요소라면 전부 선택
+// 		document.querySelectorAll() : 복수의 요소라면 전부 선택
 const li3 = document.querySelectorAll('.none-li');
 
 
-// 2. 요소 조작하기
-//	2-1. 콘텐츠를 조작하는 방법
+// 3. 요소 조작
 // textContent : 순수한 텍스트 데이터를 전달, 이전의 태그들은 모두 제거
 title.textContent = '<span>바꿧지롱~</span>';
 
 // innerHTML : 태그는 태그로 인식해서 전달, 이전의 태그들은 모두 제거
 title.innerHTML = '<span>inner로 바꿧지롱~</span>';
 
-
-// 요소에 속성을 추가
+// setAttribute('', '') : 요소에 속성을 추가
 const it = document.getElementById('it');
 it.setAttribute('placeholder', '셋어트리뷰트로 삽입');
 
 const aa = document.getElementById('aa');
 aa.setAttribute('href', 'http://www.naver.com');
 
-// 요소의 속성을 제거
+// removeAttribute('') : 요소의 속성을 제거
 it.removeAttribute('placeholder');
 //aa.removeAttribute('href');
 
 
-// 요소의 스타일링
-// 인라인으로 스타일 추가
+// 4. 요소 스타일링
+// style : 인라인으로 스타일 추가
 //aa.style.textDecoration = 'none';
 //aa.style.color = 'skyblue';
 
-// 클래스로 스타일 추가
+// classList : 클래스로 스타일 추가
 aa.classList.add('aa1', 'aa2', 'aa3');
 
 
-// 새로운 요소 만들기
+// 5. 새로운 요소 만들기
 // 요소 만들기
 const cli = document.createElement('li');
 cli.innerHTML = '야끼우동';
@@ -98,3 +102,11 @@ for( let i = 0; i < li.length; i++ ) {
 		li[i].style.backgroundColor = 'beige';
 	}
 }
+
+
+// 6. 참조
+// 	DOM 속성
+// 	https://developer.mozilla.org/ko/docs/Web/API/Element
+
+// 	Document
+// 	https://developer.mozilla.org/ko/docs/Web/API/Document
