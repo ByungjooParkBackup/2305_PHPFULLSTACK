@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		.containar {
+			width: 300px;
+			height: 300px;
+		}
+		.can {
+			border: 3px solid black;
+		}
+	</style>
+	<title>Document</title>
+</head>
+<body>
+	<div class="containar">
+		<canvas class="can"></canvas>
+	</div>
+	<br>
+	<br>
+	<button onclick="saveCan();">저장</button>
+	<button onclick="clearCan();">지우기</button>
+	<script>
+		const can = document.querySelector('.can');
+		const ctx = can.getContext("2d");
+		const containar = document.querySelector('.containar');
+		can.height = '300';
+		can.width = '300';
+
+		let drawble = false;
+		function draw(e){
+			function getPosition(){
+				console.log(`${e.pageX} : ${can.offsetLeft} = ${e.pageX - can.offsetLeft}`);
+				console.log(`${e.pageY} : ${can.offsetTop} = ${e.pageY - can.offsetTop}`);
+				return {
+				X: e.pageX - can.offsetLeft, 
+				Y: e.pageY - can.offsetTop
+				}
+			}
+			switch(e.type){
+				case "mousedown":{
+				drawble = true;
+				ctx.beginPath();
+				ctx.moveTo(getPosition().X, getPosition().Y);
+				}
+				break;
+				case "mousemove":{
+				if(drawble){
+					ctx.lineTo(getPosition().X, getPosition().Y);
+					ctx.stroke();
+				}
+				}
+				break;
+				case "mouseup":
+				case "mouseout":{
+				drawble = false;
+				ctx.closePath();
+				}
+				break;
+			}
+		}
+		can.addEventListener("mousedown", draw);
+		can.addEventListener("mousemove", draw);
+		can.addEventListener("mouseup", draw);
+		can.addEventListener("mouseout", draw);
+
+		function clearCan() {
+			ctx.clearRect(0, 0, can.width, can.height);
+		}
+
+		function saveCan() {
+            // a 태그를 만들어서 다운로드를 만듭니다.
+            var link = document.createElement('a'); 
+            // base64데이터 링크 달기
+            link.href = can.toDataURL("image/png"); 
+            // 다운로드시 파일명 지정
+            link.download = "image.png"; 
+            // body에 추가
+            document.body.appendChild(link); 
+            link.click(); 
+            document.body.removeChild(link); 
+            // 다운로드용 a 태그는 다운로드가 끝나면 삭제합니다.
+            form.remove();
+		}		
+	</script>
+</body>
+</html>
