@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		div {
+			width: 300px;
+			height: 300px;
+		}
+		canvas {
+			border: 3px solid black;
+		}
+	</style>
+	<title>sign</title>
+</head>
+<body>
+	<div id="div1">
+		<canvas id="can1"></canvas>
+	</div>
+	<br>
+	<br>
+	<button id="btn1">저장</button>
+
+	<script>
+		const div1 = document.getElementById('div1');
+		const can1 = document.getElementById('can1');
+		const btn1 = document.getElementById('btn1');
+		const ctx = can1.getContext("2d");
+		let drawble = false;
+
+		btn1.addEventListener("click", function() {
+			// a 태그를 만들어서 다운로드를 만듭니다.
+			var link = document.createElement('a');
+			// base64데이터 링크 달기
+			link.href = can1.toDataURL("image/png");
+			// 다운로드시 파일명 지정
+			link.download = "image.png"; 
+			// body에 추가
+			document.body.appendChild(link); 
+			link.click(); 
+			document.body.removeChild(link); 
+			// 다운로드용 a 태그는 다운로드가 끝나면 삭제합니다.
+			form.remove();
+		});
+
+		// pc에서 서명을 할 경우 사용되는 이벤트입니다.
+		function draw(e){
+			function getPosition(){
+				return {
+					X: e.pageX - can1.offsetLeft, 
+					Y: e.pageY - can1.offsetTop
+				}
+			}
+			switch(e.type){
+				case "mousedown":{
+					drawble = true;
+					ctx.beginPath();
+					ctx.moveTo(getPosition().X, getPosition().Y);
+				}
+				break;
+				case "mousemove":{
+					if(drawble){
+						ctx.lineTo(getPosition().X, getPosition().Y);
+						ctx.stroke();
+					}
+				}
+				break;
+				case "mouseup":
+				case "mouseout":{
+					drawble = false;
+					ctx.closePath();
+				}
+				break;
+			}
+		}
+		can1.addEventListener("mousedown", draw);
+		can1.addEventListener("mousemove", draw);
+		can1.addEventListener("mouseup", draw);
+		can1.addEventListener("mouseout", draw);
+	</script>
+
+</body>
+</html>

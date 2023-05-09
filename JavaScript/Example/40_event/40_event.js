@@ -10,30 +10,44 @@ btn1.onclick = function() {
 	location.href = "http://www.google.com"; // 현재창에서 이동
 }
 
-
-// addEventListener(eventType, function) 방식wwww
+// addEventListener(eventType, function) 방식
 const btn2 = document.querySelector('#btn2');
+//const btn2 = document.getElementById('btn2');
+
+// 현재창에서 열기
+//btn2.addEventListener('click', () => {
+//	location.href = 'http://www.daum.net';
+//});
+
+// 팝업창 열기
 let newWindow = null;
 btn2.addEventListener('click', () => {
-	newWindow = open('40_window.html', 'test', 'width=500, height=400'); // 새창으로 이동
+	newWindow = open('http://www.daum.net', '', 'width=500 height=500');
 });
 
-const btn2Close = document.querySelector('#btn2Close');
-const eventClose = () => { newWindow.close(); }
-btn2Close.addEventListener('click', eventClose);
+// 팝업창 닫기
+const btn3 = document.getElementById('btn3');
+btn3.addEventListener('click', () => newWindow.close());
 
 
 // 이벤트 삭제
-// removeEventListener(eventType, function) 
-// addEventListener()로 등록한 이벤트의 인수와 같은 인수를 셋팅해야 삭제됩니다.
-// btn2Close.removeEventListener('click', eventClose);
+// removeEventListener(eventType, function)
+// addEventListener()로 등록한 이벤트의 아규먼트와 같은 아규먼트를 셋팅해야 삭제됩니다.
+//btn3.removeEventListener('click', popUpClose(newWindow));
+
+//function popUpClose(win) {
+//	win.close();
+//}
 
 
 // 이벤트 타입
 // 1. 마우스 이벤트
 // - mousedown - 마우스가 요소안에서 클릭이 눌릴 때
+const div1 = document.querySelector('.div1');
+div1.addEventListener('mousedown', () => alert('dvi1 클릭'));
 // - mouseup - 마우스가 요소안에서 클릭이 해제될 때
 // - mouseenter - 마우스 포인터가 요소 안으로 진입 했을 때
+div1.addEventListener('mouseenter', () => alert('dvi1 진입'));
 // - mouseleave - 마우스 포인터가 요소 밖깥으로 나갔을 때
 // - mousemove - 마우스 포인터가 요소 안에서 움직일 때
 // - event.clientX, event.clientY - 브라우저 화면 기준 X, Y 좌표
