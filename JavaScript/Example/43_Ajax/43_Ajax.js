@@ -26,52 +26,26 @@
 
 4. API 예제 사이트
 	https://picsum.photos/
-
 */
 
-const btnForm1 = document.getElementById('btnForm1');
-const divImg = document.getElementById('divImg');
 
-btnForm1.addEventListener('click', function(){
-	const limit = document.getElementById('limitNum');
-	const page = document.getElementById('pageNum');
-	getApiData(page.value.trim(), limit.value.trim());
-});
+const url = "https://picsum.photos/v2/list?page=2&limit=5";
 
-function getApiData(page, limit) {
-	const url = `https://picsum.photos/v2/list?limit=${limit}&page=${page}`;
-
-	deleteImgChild();
-
-	fetch(url)
-	.then(res => { return res.json(); })
-	.then(data => makeList(data))
-	.catch(console.log);
-}
+fetch(url)
+.then(res => {return res.json()})
+.then(data => makeList(data))
+.catch(console.log);
 
 function makeList(data) {
 	data.forEach(item => {
 		console.log(item);
-		const tagImg = createTagImg(item);
-		divImg.appendChild(tagImg);
+		const tagImg = document.createElement('img');
+		tagImg.setAttribute('src', item.download_url);
+		tagImg.style.width = 200 + 'px';
+		tagImg.style.height = 200 + 'px';
+		document.body.appendChild(tagImg);
 	});
 }
-
-function createTagImg(item) {
-	const tagImg = document.createElement('img');
-	tagImg.setAttribute('src', item.download_url);
-	return tagImg;
-}
-
-function deleteImgChild() {
-	while (divImg.firstChild) {
-		divImg.firstChild.remove();
-	}
-}
-
-
-
-
 // ----------  참조  -----------
 //1. 직렬화(Serialization)
 // 	데이터 구조나 오브젝트 상태를 동일 혹은 다른 컴퓨터 환경에 저장하고,
