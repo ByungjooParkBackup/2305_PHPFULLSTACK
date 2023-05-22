@@ -27,11 +27,11 @@
 	3-1. Laravel 프로젝트를 생성할 위치로 이동
 	3-2. 아래 커멘드로 라라벨 설치
 		composer create-project laravel/laravel="9" larabel-board
-		(**주의** : php.ini에 zip Extension이 주석 해제 필요)
+		(**주의** : php.ini에 zip, fileinfo, openssl, pdo_mysql, mbstring Extension 주석 해제 필요)
 	3-3. Apache 설정
 		- root 변경
-			DocumentRoot "${SRVROOT}/htdocs/larabel-board/public"
-			<Directory "${SRVROOT}/htdocs/larabel-board/public">
+			DocumentRoot "${SRVROOT}/htdocs/"라라벨디렉토리명"/public"
+			<Directory "${SRVROOT}/htdocs/"라라벨디렉토리명"/public">
 		- mod_rewrite 모듈 활성
 			LoadModule rewrite_module modules/mod_rewrite.so
 		(**주의** : Apache 서버 재기동 필요)

@@ -16,7 +16,7 @@
 	1-5. Controller or Closure
 		HTTP Request에 대응하는 처리를 실행
 		실질적인 비지니스 로직이 구현되는 곳으로 좁은 의미로의 Application의 실행 기점
-		처리를 완료하면 Response를 만들고 반환 
+		처리를 완료하면 Response를 만들고 반환
 
 2. 디렉토리 구조
 root/
