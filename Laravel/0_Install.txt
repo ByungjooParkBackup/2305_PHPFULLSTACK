@@ -1,0 +1,47 @@
+0. Laravel 공식 사이트
+	https://laravel.kr
+
+1. PHP, DB, Apache Install
+	라라벨 프레임워크는 몇 가지 시스템 요구 사항이 있습니다.
+	Laravel의 Version마다 상이하므로 확인이 필요합니다.
+
+	Laravel 9.x 기준으로 웹 서버에 최소 PHP 버전 및 extension이 다음과 같은지 확인해야 합니다.
+		PHP >= 8.0
+		BCMath PHP Extension
+		Ctype PHP Extension
+		Fileinfo PHP Extension
+		JSON PHP Extension
+		Mbstring PHP Extension
+		OpenSSL PHP Extension
+		PDO PHP Extension
+		Tokenizer PHP Extension
+		XML PHP Extension
+
+2. Composer Install
+	- PHP 의존성 관리 도구
+	- 아래 사이트에 접속하여 다운로드
+		https://getcomposer.org/download/
+	- 설치 완료 후, 터미널에서 "composer"를 입력하여 설치 확인
+
+3. Laravel 프로젝트 생성 (이하 터미널에서 커멘드라인으로 작업)
+	3-1. Laravel 프로젝트를 생성할 위치로 이동
+	3-2. 아래 커멘드로 라라벨 설치
+		composer create-project laravel/laravel="9" larabel-board
+		(**주의** : php.ini에 zip Extension이 주석 해제 필요)
+	3-3. Apache 설정
+		- root 변경
+			DocumentRoot "${SRVROOT}/htdocs/larabel-board/public"
+			<Directory "${SRVROOT}/htdocs/larabel-board/public">
+		- mod_rewrite 모듈 활성
+			LoadModule rewrite_module modules/mod_rewrite.so
+		(**주의** : Apache 서버 재기동 필요)
+	3-4. Laravel 서버 실행
+		- larabel-board 디렉토리 안에서 아래 커멘드 실행
+			php artian serve
+	3-5. 접속 확인
+
+4. 유용한 확장프로그램
+	Laravel goto view : ctrl + 좌클릭으로 해당 뷰파일로 이동 기능 제공
+	Laravel Snippets : 일부 자동완성 기능 제공
+	Laravel Extra Intellisense : 일부 자동완성 기능 제공
+	Getter and Setter Generator : getter / setter 자동 생성

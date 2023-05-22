@@ -1,0 +1,36 @@
+0. Laravel 이란?
+	오픈소스 PHP 웹 프레임워크 중 하나
+	MVC 모델로 웹 애플리케이션을 개발하기 위해 고안
+
+1. Laravel Application의 Life Cycle
+	1-1. Entry Point
+	1-2. HTTP Kernel
+	1-3. Router
+	1-4. Middleware
+	1-5. Controller or Closure
+
+2. 디렉토리 구조
+root/
+	|--	app/ 		: 컨트롤러나 모델, 미들웨어 등 주요한 처리 클래스가 모여있는 디렉토리
+	|--	bootstrap	: 가장 먼저 실행되는 처리나 autoloading 설정, 퍼포먼스 향상을 위한 cache 등을 배치 (일반적으로 수정 불필요)
+	|--	config		: 설정 파일을 배치 (composer로 프로젝트를 생성했을 경우 .env로 대체 됨, .env에 없는 설정을 config디렉토리의 설정을 사용)
+	|--	database	: DB 관련 파일을 배치
+	|--	lang		: 다국어 파일을 배치
+	|--	public		: 엔트리 포인트(index.php)가 배치되는 루트로 설정
+	|--	resources	: 뷰 파일, CSS, JavaScript 파일 등을 배치
+	|--	routes		: 루트 정의 파일을 배치
+	|--	storage		: 라라벨이 만드는 파일을 출력하는 위치로, 로그파일이나 캐시 및 컴파일 된 파일등을 배치
+	|--	tests		: 테스트 코드 파일을 배치
+	|--	vendor		: composer로 프로젝트를 생성했을 경우 다운로드된 패키지 및 Laravel 본체 코드가 배치, 버전관리에 비포함
+
+3. 루트 디렉토리의 파일
+	.editorconfig	: IDE 또는 에디터에서 참고하는 코딩 표준 스타일 설정 파일
+	.env 			: 환경 변수를 지정하는 파일
+	.env.example	: 환경설정 예제 파일
+	.gitattributes	: git 디렉토리 및 파일 단위로 설정을 적용하는 파일
+	.gitignore		: git 버전 관리 제외 대상 설정 파일
+	composer.json	: 개발자가 편집하는 composer 설정 파일, 프로젝트의 구성과 의존성에 대한 정보
+	composer.lock	: 자동으로 생성되는 composer 설정 파일, 프로젝트의 구성과 의존성에 대한 정보
+	package.json	: 프론트엔드의 파일과 의존성에 대한 정보가 있는 설정 파일
+	phpunit.xml		: 테스트에서 사용하는 PHPUnit 설정 파일
+
