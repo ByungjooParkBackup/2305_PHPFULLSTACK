@@ -182,3 +182,9 @@ Route::resource('/tasks', TasksController::class);
 // ------------
 use App\Http\Controllers\BladeController;
 Route::get('blade', [BladeController::class, 'index'])->name('blade.index');
+
+
+
+
+use App\Http\Controllers\BoardController;
+Route::get('board', [BoardController::class, 'index'])->name('board.index');
