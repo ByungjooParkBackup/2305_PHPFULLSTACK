@@ -21,8 +21,8 @@ class DatabaseSeeder extends Seeder
 
         // 더미 데이터 삽입용 팩토리 호출
         $cnt = 0;
-        while( $cnt <= 5) {
-            \App\Models\Board::factory(10000)->create();
+        while( $cnt < 5) {
+            \App\Models\Board::factory(3)->create();
             $cnt++;
         }
     }

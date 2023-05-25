@@ -181,10 +181,8 @@ Route::resource('/tasks', TasksController::class);
 // 블레이드 템플릿
 // ------------
 use App\Http\Controllers\BladeController;
-Route::get('blade', [BladeController::class, 'index'])->name('blade.index');
-
-
+Route::get('/blade', [BladeController::class, 'index'])->name('blade.index');
 
 
 use App\Http\Controllers\BoardController;
-Route::get('board', [BoardController::class, 'index'])->name('board.index');
+Route::resource('/board', BoardController::class);
