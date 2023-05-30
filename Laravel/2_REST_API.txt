@@ -27,8 +27,9 @@
 	3-3. 언더바 대신 하이폰을 사용한다.
 	3-4. 파일확장자는 URI에 포함하지 않는다.
 	3-5. 행위를 포함하지 않는다.
+	3-6. 복수형 명사를 사용한다.
 
-	EX) GET  	http://localhost/member/1  	:  	1번 회원 조회
-		POST 	http://localhost/member		:  	회원 정보 리소스 생성
-		PUT  	http://localhost/member/1  	:  	1번 회원 정보 수정
-		DELETE 	http://localhost/member/1 	: 	1번 회원 정보 삭제
+	EX) GET  	http://localhost/members/1  	:  	1번 회원 조회
+		POST 	http://localhost/members		:  	회원 정보 리소스 생성
+		PUT  	http://localhost/members/1  	:  	1번 회원 정보 수정
+		DELETE 	http://localhost/members/1 	: 	1번 회원 정보 삭제
