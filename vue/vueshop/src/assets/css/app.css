@@ -30,3 +30,42 @@ div {
 	padding: 20px;
 	margin: 20px auto;
 }
+
+.discount {
+	background: beige;
+	padding: 20px;
+	margin: 10px;
+	border-radius: 10px;
+	font-size: xx-large;
+}
+
+
+/*.startTransition {
+	opacity: 0;
+	transition: all 1s;
+}
+.endTransition {
+	opacity: 1;
+}*/
+
+/* 등장 애니매이션 */
+.modalTransition-enter-from {
+	opacity: 0;
+}
+.modalTransition-enter-active {
+	transition: all 2s;
+}
+.modalTransition-enter-to {
+	opacity: 1;
+}
+
+/* 퇴장 애니매이션 */
+.modalTransition-leave-from {
+	transform: translateX(0px);
+}
+.modalTransition-leave-active {
+	transition: all 2s;
+}
+.modalTransition-leave-to {
+	transform: translateX(1000px);
+}

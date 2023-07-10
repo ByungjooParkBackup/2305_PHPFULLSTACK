@@ -8,16 +8,35 @@
     <a>상품</a>
     <a>기타</a>
   </div>-->
+  <div class="discount">
+    <p>지금 당장 구매하시면, {{ discountNum }}% 할인</p>
+  </div>
+
+  <!-- v-model 테스트 -->
+  <!--<br>-->
+  <!--<input type="text" @input="inpuTest = $event.target.value">-->
+  <!--<input type="text" v-model="inpuTest">
+  <br>
+  <span>{{ inpuTest }}</span>
+  <br>-->
 
   <!-- 모달 -->
-  <Modal
+  <Transition name="modalTransition">
+    <Modal
+      @closeModal="modalFlg = false;"
+      :products="products"
+      :productNum="productNum"
+      :modalFlg="modalFlg"
+    />
+  </Transition>
+  <!--<Modal
     @closeModal="modalFlg = false;"
     @plus="plus(productNum);"
     @minus="minus(productNum);"
     :products="products"
     :productNum="productNum"
     :modalFlg="modalFlg"
-  />
+  />-->
   <!--<div class="bg_black" v-if="modalFlg">
     <div class="bg_white">
       <img :src="products[productNum].img">
@@ -68,6 +87,8 @@ export default {
   name: 'App',
   data() { // 데이터 바인딩
     return {
+      hookTest: false,
+      inpuTest: '',
       navList: ['홈', '상품', '기타'],
       products: data,
       modalFlg: false,
@@ -78,7 +99,17 @@ export default {
       product2: '바지',
       price2: '5000',
       styleR: 'color:red',
+      discountNum: 20,
+      interval: null,
     }
+  },
+  watch: { // 실시간 감시 함수 정의 영역
+    inpuTest(input) {
+      if( input == 3 ) {
+        alert('3333');
+        this.inpuTest = '';
+      }
+    },
   },
   methods: { // 함수를 설정한는 영역
     plus(i) {
@@ -95,6 +126,16 @@ export default {
       this.productPrice = this.products[i].price;
       this.products[i].count = 1;
     },
+  },
+  mounted() {
+    this.interval = setInterval(() => {
+      this.discountNum--;
+    }, 1000);
+  },
+  updated() {
+    if(this.discountNum == 0) {
+      clearInterval(this.interval);
+    }
   },
   components: { // 컴포넌트 정의
     Navi,
