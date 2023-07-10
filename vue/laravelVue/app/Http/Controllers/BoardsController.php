@@ -39,7 +39,9 @@ class BoardsController extends Controller
         $board->name = $req->name;
         $board->likes = 0;
         $board->content = $req->content;
+        $board->filter = $req->filter;
         $board->save();
+        $board->img = asset($board->img);
         return $board;
     }
 

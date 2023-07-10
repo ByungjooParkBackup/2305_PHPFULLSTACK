@@ -222,48 +222,6 @@ lifecycle hook
 
 -----------------------------------------------------------------------
 
-route
-	1. route 설치
-		npm install vue-router@4
-
-	2. src디렉토리에 router.js 생성
-		** main.js에 바로 설정해도 되나 일반적으로 라우터 파일을 따로 만듬 **
-		import { createWebHistory, createRouter } from "vue-router";
-		import 이름 from '컴포넌트 경로';
-
-		const routes = [
-		{
-			path: "/경로",
-			component: import한 컴포넌트,
-		}
-		];
-
-		const router = createRouter({
-		history: createWebHistory(),
-		routes,
-		});
-
-		export default router; 
-
-	3. main.js에 설정
-		import router from './router'
-		createApp(App).use(router).mount('#app')
-
-	4. App.vue에 라우트 사용
-		4-1. 기본 사용 방법
-			<router-view></router-view>
-		4-2. props 이용 시 방법
-			<router-view :boardsData="boardsData"></router-view>
-
-라우트 이동 링크 만드는 방법
-    <router-link to="/write">이동하기</router-link>
-
------------------------------------------------------------------------
-
-이하 인스타그램
-
------------------------------------------------------------------------
-
 Vuex
 	상태관리 (데이터관리) 라이브러리
 
@@ -328,6 +286,20 @@ actions (Ajax 요청 등)
 				this.$store.dispatch('해당 함수명', args);
 				this.$store.dispatch('해당 함수명', {args1, args2});
 
+mapState
+	store.js에 정의한 것들을 좀더 간단하게 사용하기 위한 기능
+	"$store.state.name"으로 사용하던 것을 "name"만으로 사용 가능 
+
+	1. import
+	import {mapState, mapMutations, mapActions} from 'vuex';
+
+	2. 정의 (methods에 정의해도 동작함)
+		computed: {
+		...mapActions([]),
+		...mapMutations([]),
+		...mapState([])
+		}
+
 -----------------------------------------------------------------------
 
 axios
@@ -350,6 +322,15 @@ axios
 
 탭UI
 
+필터
+	1. 필터명
+	[ "aden", "_1977", "brannan", "brooklyn", "clarendon", "earlybird", "gingham", "hudson", 
+		"inkwell", "kelvin", "lark", "lofi", "maven", "mayfair", "moon", "nashville", "perpetua", 
+		"reyes", "rise", "slumber", "stinson", "toaster", "valencia", "walden", "willow", "xpro2"]
+
+	2. index.html에 아래 cdn 추가
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cssgram/0.1.12/cssgram.min.css" integrity="sha512-kr3JaEexN5V5Br47Lbg4B548Db46ulHRGGwvyZMVjnghW1BKmqIjgEgVHV8D7V+Cbqm/VBgo3Rcbtv+mGLoWXA==" crossorigin="anonymous" />
+
 -----------------------------------------------------------------------
 
 이미지 업로드
@@ -359,6 +340,40 @@ axios
 
 -----------------------------------------------------------------------
 
+route
+	1. route 설치
+		npm install vue-router@4
 
+	2. src디렉토리에 router.js 생성
+		** main.js에 바로 설정해도 되나 일반적으로 라우터 파일을 따로 만듬 **
+		import { createWebHistory, createRouter } from "vue-router";
+		import 이름 from '컴포넌트 경로';
+
+		const routes = [
+		{
+			path: "/경로",
+			component: import한 컴포넌트,
+		}
+		];
+
+		const router = createRouter({
+		history: createWebHistory(),
+		routes,
+		});
+
+		export default router; 
+
+	3. main.js에 설정
+		import router from './router'
+		createApp(App).use(router).mount('#app')
+
+	4. App.vue에 라우트 사용
+		4-1. 기본 사용 방법
+			<router-view></router-view>
+		4-2. props 이용 시 방법
+			<router-view :boardsData="boardsData"></router-view>
+
+라우트 이동 링크 만드는 방법
+    <router-link to="/write">이동하기</router-link>
 
 -----------------------------------------------------------------------

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('img', 100);
             $table->integer('likes');
             $table->string('content', 150);
+            $table->string('filter', 100)->nullable();
             $table->timestamps();
             
         });
