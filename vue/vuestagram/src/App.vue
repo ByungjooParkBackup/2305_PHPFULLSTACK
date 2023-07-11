@@ -37,8 +37,6 @@ export default {
   methods: {
     updateImg(e) {
       let file = e.target.files;
-      console.log(e.target);
-      console.log(e.target.value);
       let imgUrl = URL.createObjectURL(file[0]);
       this.$store.commit('changeImgUrl', imgUrl);
       this.$store.commit('changeTabFlg', 1);
