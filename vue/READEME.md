@@ -340,6 +340,54 @@ axios
 
 -----------------------------------------------------------------------
 
+Composition API
+	분산되어 있는 로직을, 관련 있는 로직들끼리 모아 개발하기 위해 사용
+	필수는 아니므로 Opsions API 중 선택해서 사용
+
+사용방법
+	1. 사용 할 기능들을 임포트
+		import { ref, reactive, onMounted... } from 'vue';
+
+	2. setup(){}에 데이터 생성, 조작, methods, computed, hook 등등 모두 작성
+		2-1. ref() & reactive()
+		reactive()의 경우 객체 타입일 경우에만 실시간 랜더링이 가능하고,
+		ref()의 경우에는 모든 데이터 타입에 대해서 실시간 랜더링이 가능
+		그러므로 관습적으로 ref()와 reactive()를 구분해서 쓰나, ref()만 사용해도 문제 없음
+			setup() {
+				let reactive = reactive(); // obj나 array형 정의
+				let ref = ref([]); // 그 외 자료형들 정의
+
+				return {...작성한 데이터들};
+			},
+
+		2-2. Props
+			props를 setup()에서 사용하고 싶을 시, props:{}를 생성 후 setup(props)로 셋팅을 해야 사용 가능
+			setup(props) {
+				let { props명 } = toRefs(props);
+
+				return {...작성한 데이터들};
+			},
+		
+		2-3. Watch
+			setup() {
+				watch( watch하고 싶은 데이터, () => {
+					실행하고 싶은 코드
+				})
+
+				return {...작성한 데이터들};
+			},
+
+		2-4. computed
+			setup() {
+				let test = computed( () => {
+					return 11;
+				})
+
+				return {...작성한 데이터들};
+			},
+
+-----------------------------------------------------------------------
+
 route
 	1. route 설치
 		npm install vue-router@4
