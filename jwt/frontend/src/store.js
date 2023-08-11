@@ -13,6 +13,10 @@ const store = createStore({
 		setToken(state, token) {
 			TokenController.setToken(token);
 			state.isToken = true;
+		},
+		destroyToken(state) {
+			TokenController.destroyToken();
+			state.isToken = false;
 		}
 	},
 	actions: {
@@ -27,6 +31,10 @@ const store = createStore({
 			.catch(error => {
 				console.log(error);
 			});
+		},
+		logout(context) {
+			context.commit("destroyToken");
+			router.push("login");
 		}
 	}
 });
